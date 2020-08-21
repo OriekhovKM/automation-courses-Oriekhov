@@ -1,4 +1,4 @@
-package Lectures.Lesson1;
+package Lectures.Lesson_1;
 
 public class HelloWorld {
 }
