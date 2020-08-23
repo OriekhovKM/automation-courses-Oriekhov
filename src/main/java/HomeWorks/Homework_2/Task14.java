@@ -1,14 +1,14 @@
 package HomeWorks.Homework_2;
 
-public class Task11 {
+public class Task14 {
     public static void main(String[] args) {
-        double x = 0;
-        double PI = Math.PI;
+        double x = 1;
 
-        double a = Math.tan(5 * x / PI);
+        double a = Math.log10(x) / (Math.pow(x, 2) + 5 * x + 1);
         double b = Math.pow(x, 3.2) / 28;
 
-        double y = Math.acos(a) + b;
+
+        double y = Math.asin(a) - b;
 
         System.out.print(y);
     }
