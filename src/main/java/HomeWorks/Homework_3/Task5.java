@@ -10,7 +10,7 @@ public class Task5 {
 
         System.out.println("Enter Second Name:");
         Scanner second = new Scanner(System.in);
-        String secondName = first.next();
+        String secondName = second.next();
 
         if (firstName.equals(secondName)) System.out.print("people are namesakes");
     }
