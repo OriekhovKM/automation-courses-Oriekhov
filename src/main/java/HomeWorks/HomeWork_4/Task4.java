@@ -8,7 +8,7 @@ public class Task4 {
 
 
 
-        int sumOdd = 0, sumEven = 0, i = 1;
+        int sumOdd = 0, sumEven = 0;
 
         while (number != 0) {
            if (number % 2 == 0)
@@ -16,7 +16,7 @@ public class Task4 {
             else
                 sumOdd = sumOdd + number % 10;
             number = number/10;
-            i++;
+
         }
         System.out.println("Sum odd = " + sumOdd);
         System.out.println("Sum even = " + sumEven);
