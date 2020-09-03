@@ -8,12 +8,11 @@ public class Task6 {
         char operator = ' ';
 do {
     System.out.println("Enter first number:");
-    Scanner number1 = new Scanner(System.in);
-    double x = number1.nextDouble();
+    Scanner scanner = new Scanner(System.in);
+    double x = scanner.nextDouble();
 
     System.out.println("Enter second number:");
-    Scanner number2 = new Scanner(System.in);
-    double y = number2.nextDouble();
+    double y = scanner.nextDouble();
 
     System.out.println("Enter operator:");
     Scanner action = new Scanner(System.in);
@@ -23,8 +22,7 @@ do {
     while (operator != '+' && operator != '-' && operator != '*' && operator != '/' && operator != '0') {
         System.out.println("Not correct operator");
         System.out.println("Enter operator:");
-        Scanner action2 = new Scanner(System.in);
-        operator = action2.next().charAt(0);
+        operator = scanner.next().charAt(0);
     }
 
     switch (operator) {
@@ -40,7 +38,7 @@ do {
             System.out.println("=" + (x * y));
             break;
         case '/':
-            if (x != 0) {
+            if (y != 0) {
             System.out.println("=" + (x / y));
             } else System.out.println("You cannot divide by zero");
             break;

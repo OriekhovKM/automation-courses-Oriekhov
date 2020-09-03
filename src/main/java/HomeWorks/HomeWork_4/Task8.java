@@ -6,7 +6,7 @@ public class Task8 {
     public static void main(String[] args) {
         int[] arr = {0, -11, 2, 4, 14, 15}; //input data
         int min = 1;
-        int max = 10;
+        int max = 3;
 
         int[] arrNew;
         arrNew = new int[arr.length];
