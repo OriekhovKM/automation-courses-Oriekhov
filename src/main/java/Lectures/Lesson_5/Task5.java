@@ -35,7 +35,7 @@ public class Task5 {
         return resultInt;
     }
     private static void factorial (int factorialRange) {
-        int result = 1:
+        int result = 1;
         for (int j=1; j<= factorialRange; j++){
             result = result*j;
         }
