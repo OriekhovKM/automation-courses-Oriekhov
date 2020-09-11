@@ -4,11 +4,10 @@ public class Task2 {
     public  static  void getIntDataOfArray (String[] args){
 
     }
-    public String valueOrDefault (String envVar, String defValue){
+    public void valueOrDefault (String envVar, String defValue){
         String returnValue;
         if (System.getenv("ADMINNAME").isEmpty()) {
             returnValue = defValue;
         }
-
     }
 }
