@@ -1,13 +1,19 @@
 package Lectures.Lesson_10.website;
 
-import Lectures.Lesson_10.TestBase;
-
-public class LoginTest extends TestBase {
-    public void loginTest(){
-        logger.log("open home page");
-        logger.log("open login page");
+public class LoginTest extends AuthFlowBaseTest {
+    public void beforeTest() {
+        beforeAuth();
         logger.log("fill login");
+
+    }
+    public void loginTestPositive(){
         logger.log("fill password");
+        logger.log("submit login form");
         logger.log("check is logger in");
+   }
+
+    public void loginTestNegative(){
+        logger.log("submit login form");
+        logger.log("check error");
     }
 }
