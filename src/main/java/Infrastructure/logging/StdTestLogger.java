@@ -1,9 +1,9 @@
-package Infrastructure;
+package Infrastructure.logging;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class TestLogger {
+public class StdTestLogger {
     public static int counter = 0;
 
     public  void log(String operation) {
