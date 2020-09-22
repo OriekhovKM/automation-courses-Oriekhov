@@ -35,4 +35,15 @@ public class Laptop  extends Device{
     public void setSpec(String spec) {
         this.spec = spec;
     }
+
+    @Override
+    public String toString() {
+        return "Laptop{" +
+                "type" + getType() + '\'' +
+                " description" + getDescription() + '\'' +
+                "screenSize='" + screenSize + '\'' +
+                ", arch='" + arch + '\'' +
+                ", spec='" + spec + '\'' +
+                '}';
+    }
 }

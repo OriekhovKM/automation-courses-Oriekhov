@@ -1,9 +1,10 @@
 package Lectures.Lesson_11;
 
-public class Accessories {
+public class Accessories extends Device{
     private Boolean isWirless;
 
-    public Accessories(Boolean isWirless) {
+    public Accessories(String type, String description, Boolean isWirless) {
+        super(type, description);
         this.isWirless = isWirless;
     }
 

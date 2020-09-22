@@ -24,4 +24,14 @@ public class Device {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return "Device{" +
+                "type" + getType() + '\'' +
+                " description" + getDescription() + '\'' +
+                "type='" + type + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }

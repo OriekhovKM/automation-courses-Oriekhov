@@ -28,7 +28,7 @@ public class ConfigurationManager {
         return getEnvironmentVariableOrDefault("environment", "qa_env");
     }
 
-    public String getTestEnvironment() {
-        return getEnvironmentVariableOrDefault("environment", "qa_env");
+    public String getCurrentEnvironment() {
+        return getEnvironmentVariableOrDefault("runEnv", "local");
     }
 }

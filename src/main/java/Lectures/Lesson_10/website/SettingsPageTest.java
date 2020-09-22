@@ -1,6 +1,7 @@
 package Lectures.Lesson_10.website;
 
 public class SettingsPageTest extends RestAuthBaseTest{
+
     @Override
     public void beforeTest(){
         super.beforeTest();
@@ -11,7 +12,7 @@ public class SettingsPageTest extends RestAuthBaseTest{
 
     }
 
-    public void canChangeUserAdress(){
+    public void canChangeUserAddress(){
 
     }
 }
