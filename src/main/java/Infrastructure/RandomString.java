@@ -1,4 +1,4 @@
-package HomeWorks.HomeWork_7;
+package Infrastructure;
 
 import java.util.Random;
 

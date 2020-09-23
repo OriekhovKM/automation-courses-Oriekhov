@@ -1,0 +1,385 @@
+35) 19:13:40.956[main] check is error visible1) 19:14:56.522[main] new Google chrome driver2) 19:14:56.576[main] http://qa.env.mysite.com3) 19:14:56.577[main] open home page4) 19:14:56.577[main] open login page5) 19:14:56.578[main] fill login6) 19:14:56.578[main] fill password7) 19:14:56.580[main] submit login form8) 19:14:56.580[main] check is logger in9) 19:14:56.582[main] new Google chrome driver10) 19:14:56.582[main] http://qa.env.mysite.com11) 19:14:56.583[main] open home page12) 19:14:56.583[main] open login page13) 19:14:56.584[main] fill login14) 19:14:56.584[main] submit login form15) 19:14:56.585[main] check error16) 19:14:56.589[main] new Google chrome driver17) 19:14:56.590[main] http://qa.env.mysite.com18) 19:14:56.593[main] open home page19) 19:14:56.594[main] open login page20) 19:14:56.595[main] switch to registration page21) 19:14:56.596[main] fill login22) 19:14:56.596[main] fill password23) 19:14:56.597[main] fill password24) 19:14:56.597[main] submit registration form25) 19:14:56.598[main] check is registration in26) 19:14:56.598[main] new Google chrome driver27) 19:14:56.599[main] http://qa.env.mysite.com28) 19:14:56.600[main] open home page29) 19:14:56.600[main] open login page30) 19:14:56.601[main] switch to registration page31) 19:14:56.601[main] fill login32) 19:14:56.602[main] fill password33) 19:14:56.604[main] fill password34) 19:14:56.605[main] submit registration form35) 19:14:56.605[main] check is error visible1) 19:15:34.976[main] new Google chrome driver
+2) 19:15:35.027[main] http://qa.env.mysite.com
+3) 19:15:35.027[main] open home page
+4) 19:15:35.028[main] open login page
+5) 19:15:35.028[main] fill login
+6) 19:15:35.029[main] fill password
+7) 19:15:35.029[main] submit login form
+8) 19:15:35.030[main] check is logger in
+9) 19:15:35.030[main] new Google chrome driver
+10) 19:15:35.030[main] http://qa.env.mysite.com
+11) 19:15:35.031[main] open home page
+12) 19:15:35.031[main] open login page
+13) 19:15:35.032[main] fill login
+14) 19:15:35.032[main] submit login form
+15) 19:15:35.032[main] check error
+16) 19:15:35.033[main] new Google chrome driver
+17) 19:15:35.034[main] http://qa.env.mysite.com
+18) 19:15:35.035[main] open home page
+19) 19:15:35.036[main] open login page
+20) 19:15:35.036[main] switch to registration page
+21) 19:15:35.036[main] fill login
+22) 19:15:35.037[main] fill password
+23) 19:15:35.037[main] fill password
+24) 19:15:35.038[main] submit registration form
+25) 19:15:35.038[main] check is registration in
+26) 19:15:35.039[main] new Google chrome driver
+27) 19:15:35.039[main] http://qa.env.mysite.com
+28) 19:15:35.039[main] open home page
+29) 19:15:35.040[main] open login page
+30) 19:15:35.040[main] switch to registration page
+31) 19:15:35.041[main] fill login
+32) 19:15:35.041[main] fill password
+33) 19:15:35.042[main] fill password
+34) 19:15:35.042[main] submit registration form
+35) 19:15:35.042[main] check is error visible
+1) 19:15:58.245[main] new Google chrome driver
+2) 19:15:58.293[main] http://qa.env.mysite.com
+3) 19:15:58.293[main] open home page
+4) 19:15:58.294[main] open login page
+5) 19:15:58.295[main] fill login
+6) 19:15:58.296[main] fill password
+7) 19:15:58.296[main] submit login form
+8) 19:15:58.297[main] check is logger in
+9) 19:15:58.298[main] new Google chrome driver
+10) 19:15:58.298[main] http://qa.env.mysite.com
+11) 19:15:58.298[main] open home page
+12) 19:15:58.299[main] open login page
+13) 19:15:58.299[main] fill login
+14) 19:15:58.300[main] submit login form
+15) 19:15:58.300[main] check error
+16) 19:15:58.301[main] new Google chrome driver
+17) 19:15:58.302[main] http://qa.env.mysite.com
+18) 19:15:58.303[main] open home page
+19) 19:15:58.303[main] open login page
+20) 19:15:58.304[main] switch to registration page
+21) 19:15:58.304[main] fill login
+22) 19:15:58.305[main] fill password
+23) 19:15:58.305[main] fill password
+24) 19:15:58.305[main] submit registration form
+25) 19:15:58.306[main] check is registration in
+26) 19:15:58.306[main] new Google chrome driver
+27) 19:15:58.307[main] http://qa.env.mysite.com
+28) 19:15:58.307[main] open home page
+29) 19:15:58.307[main] open login page
+30) 19:15:58.308[main] switch to registration page
+31) 19:15:58.308[main] fill login
+32) 19:15:58.309[main] fill password
+33) 19:15:58.309[main] fill password
+34) 19:15:58.310[main] submit registration form
+35) 19:15:58.310[main] check is error visible
+1) 19:17:58.685[main] new Google chrome driver
+2) 19:17:58.740[main] http://qa.env.mysite.com
+3) 19:17:58.741[main] open home page
+4) 19:17:58.742[main] open login page
+5) 19:17:58.742[main] fill login
+6) 19:17:58.743[main] fill password
+7) 19:17:58.743[main] submit login form
+8) 19:17:58.744[main] check is logger in
+9) 19:17:58.744[main] new Google chrome driver
+10) 19:17:58.745[main] http://qa.env.mysite.com
+11) 19:17:58.745[main] open home page
+12) 19:17:58.746[main] open login page
+13) 19:17:58.746[main] fill login
+14) 19:17:58.747[main] submit login form
+15) 19:17:58.747[main] check error
+16) 19:17:58.748[main] new Google chrome driver
+17) 19:17:58.749[main] http://qa.env.mysite.com
+18) 19:17:58.749[main] open home page
+19) 19:17:58.750[main] open login page
+20) 19:17:58.750[main] switch to registration page
+21) 19:17:58.751[main] fill login
+22) 19:17:58.751[main] fill password
+23) 19:17:58.751[main] fill password
+24) 19:17:58.752[main] submit registration form
+25) 19:17:58.753[main] check is registration in
+26) 19:17:58.753[main] new Google chrome driver
+27) 19:17:58.754[main] http://qa.env.mysite.com
+28) 19:17:58.754[main] open home page
+29) 19:17:58.754[main] open login page
+30) 19:17:58.755[main] switch to registration page
+31) 19:17:58.755[main] fill login
+32) 19:17:58.756[main] fill password
+33) 19:17:58.756[main] fill password
+34) 19:17:58.757[main] submit registration form
+35) 19:17:58.757[main] check is error visible
+1) 20:03:19.110[main] new Google chrome driver
+2) 20:03:19.173[main] http://qa.env.mysite.com
+3) 20:03:19.174[main] open home page
+4) 20:03:19.174[main] open login page
+5) 20:03:19.175[main] fill login
+6) 20:03:19.175[main] fill password
+7) 20:03:19.176[main] submit login form
+8) 20:03:19.176[main] check is logger in
+9) 20:03:19.177[main] new Google chrome driver
+10) 20:03:19.178[main] http://qa.env.mysite.com
+11) 20:03:19.178[main] open home page
+12) 20:03:19.179[main] open login page
+13) 20:03:19.179[main] fill login
+14) 20:03:19.180[main] submit login form
+15) 20:03:19.180[main] check error
+16) 20:03:19.181[main] new Google chrome driver
+17) 20:03:19.182[main] http://qa.env.mysite.com
+18) 20:03:19.183[main] open home page
+19) 20:03:19.183[main] open login page
+20) 20:03:19.184[main] switch to registration page
+21) 20:03:19.184[main] fill login
+22) 20:03:19.185[main] fill password
+23) 20:03:19.185[main] fill password
+24) 20:03:19.185[main] submit registration form
+25) 20:03:19.186[main] check is registration in
+26) 20:03:19.186[main] new Google chrome driver
+27) 20:03:19.187[main] http://qa.env.mysite.com
+28) 20:03:19.187[main] open home page
+29) 20:03:19.188[main] open login page
+30) 20:03:19.188[main] switch to registration page
+31) 20:03:19.188[main] fill login
+32) 20:03:19.189[main] fill password
+33) 20:03:19.189[main] fill password
+34) 20:03:19.190[main] submit registration form
+35) 20:03:19.190[main] check is error visible
+1) 20:13:45.079[main] new Google chrome driver
+2) 20:13:45.127[main] http://qa.env.mysite.com
+3) 20:13:45.128[main] open home page
+4) 20:13:45.128[main] open login page
+5) 20:13:45.128[main] fill login
+6) 20:13:45.129[main] fill password
+7) 20:13:45.129[main] submit login form
+8) 20:13:45.130[main] check is logger in
+9) 20:13:45.130[main] new Google chrome driver
+10) 20:13:45.131[main] http://qa.env.mysite.com
+11) 20:13:45.131[main] open home page
+12) 20:13:45.132[main] open login page
+13) 20:13:45.132[main] fill login
+14) 20:13:45.132[main] submit login form
+15) 20:13:45.133[main] check error
+16) 20:13:45.134[main] new Google chrome driver
+17) 20:13:45.135[main] http://qa.env.mysite.com
+18) 20:13:45.135[main] open home page
+19) 20:13:45.136[main] open login page
+20) 20:13:45.136[main] switch to registration page
+21) 20:13:45.137[main] fill login
+22) 20:13:45.137[main] fill password
+23) 20:13:45.137[main] fill password
+24) 20:13:45.138[main] submit registration form
+25) 20:13:45.139[main] check is registration in
+26) 20:13:45.139[main] new Google chrome driver
+27) 20:13:45.139[main] http://qa.env.mysite.com
+28) 20:13:45.140[main] open home page
+29) 20:13:45.141[main] open login page
+30) 20:13:45.141[main] switch to registration page
+31) 20:13:45.141[main] fill login
+32) 20:13:45.142[main] fill password
+33) 20:13:45.142[main] fill password
+34) 20:13:45.143[main] submit registration form
+35) 20:13:45.143[main] check is error visible
+1) 20:23:14.681[main] new Mozilla firefox driver
+2) 20:23:14.736[main] http://qa.env.mysite.com
+3) 20:23:14.737[main] open home page
+4) 20:23:14.737[main] open login page
+5) 20:23:14.738[main] fill login
+6) 20:23:14.738[main] fill password
+7) 20:23:14.739[main] submit login form
+8) 20:23:14.739[main] check is logger in
+9) 20:23:14.740[main] new Mozilla firefox driver
+10) 20:23:14.740[main] http://qa.env.mysite.com
+11) 20:23:14.740[main] open home page
+12) 20:23:14.741[main] open login page
+13) 20:23:14.741[main] fill login
+14) 20:23:14.742[main] submit login form
+15) 20:23:14.742[main] check error
+16) 20:23:14.743[main] new Mozilla firefox driver
+17) 20:23:14.744[main] http://qa.env.mysite.com
+18) 20:23:14.744[main] open home page
+19) 20:23:14.745[main] open login page
+20) 20:23:14.745[main] switch to registration page
+21) 20:23:14.746[main] fill login
+22) 20:23:14.746[main] fill password
+23) 20:23:14.747[main] fill password
+24) 20:23:14.748[main] submit registration form
+25) 20:23:14.749[main] check is registration in
+26) 20:23:14.749[main] new Mozilla firefox driver
+27) 20:23:14.750[main] http://qa.env.mysite.com
+28) 20:23:14.750[main] open home page
+29) 20:23:14.751[main] open login page
+30) 20:23:14.752[main] switch to registration page
+31) 20:23:14.752[main] fill login
+32) 20:23:14.753[main] fill password
+33) 20:23:14.753[main] fill password
+34) 20:23:14.754[main] submit registration form
+35) 20:23:14.754[main] check is error visible
+1) 20:29:39.443[main] new Google chrome driver
+2) 20:29:39.496[main] http://qa.env.mysite.com
+3) 20:29:39.497[main] open home page
+4) 20:29:39.497[main] open login page
+5) 20:29:39.498[main] fill login
+6) 20:29:39.498[main] fill password
+7) 20:29:39.499[main] submit login form
+8) 20:29:39.499[main] check is logger in
+9) 20:29:39.500[main] new Google chrome driver
+10) 20:29:39.500[main] http://qa.env.mysite.com
+11) 20:29:39.501[main] open home page
+12) 20:29:39.501[main] open login page
+13) 20:29:39.502[main] fill login
+14) 20:29:39.502[main] submit login form
+15) 20:29:39.503[main] check error
+16) 20:29:39.504[main] new Google chrome driver
+17) 20:29:39.505[main] http://qa.env.mysite.com
+18) 20:29:39.505[main] open home page
+19) 20:29:39.506[main] open login page
+20) 20:29:39.506[main] switch to registration page
+21) 20:29:39.506[main] fill login
+22) 20:29:39.507[main] fill password
+23) 20:29:39.507[main] fill password
+24) 20:29:39.508[main] submit registration form
+25) 20:29:39.508[main] check is registration in
+26) 20:29:39.508[main] new Google chrome driver
+27) 20:29:39.509[main] http://qa.env.mysite.com
+28) 20:29:39.509[main] open home page
+29) 20:29:39.510[main] open login page
+30) 20:29:39.510[main] switch to registration page
+31) 20:29:39.510[main] fill login
+32) 20:29:39.511[main] fill password
+33) 20:29:39.511[main] fill password
+34) 20:29:39.512[main] submit registration form
+35) 20:29:39.512[main] check is error visible
+1) 20:30:22.296[main] new Mozilla firefox driver
+2) 20:30:22.346[main] http://qa.env.mysite.com
+3) 20:30:22.347[main] open home page
+4) 20:30:22.347[main] open login page
+5) 20:30:22.348[main] fill login
+6) 20:30:22.348[main] fill password
+7) 20:30:22.348[main] submit login form
+8) 20:30:22.349[main] check is logger in
+9) 20:30:22.349[main] new Mozilla firefox driver
+10) 20:30:22.350[main] http://qa.env.mysite.com
+11) 20:30:22.350[main] open home page
+12) 20:30:22.351[main] open login page
+13) 20:30:22.351[main] fill login
+14) 20:30:22.351[main] submit login form
+15) 20:30:22.352[main] check error
+16) 20:30:22.353[main] new Mozilla firefox driver
+17) 20:30:22.353[main] http://qa.env.mysite.com
+18) 20:30:22.354[main] open home page
+19) 20:30:22.355[main] open login page
+20) 20:30:22.355[main] switch to registration page
+21) 20:30:22.355[main] fill login
+22) 20:30:22.356[main] fill password
+23) 20:30:22.356[main] fill password
+24) 20:30:22.357[main] submit registration form
+25) 20:30:22.357[main] check is registration in
+26) 20:30:22.358[main] new Mozilla firefox driver
+27) 20:30:22.358[main] http://qa.env.mysite.com
+28) 20:30:22.359[main] open home page
+29) 20:30:22.359[main] open login page
+30) 20:30:22.360[main] switch to registration page
+31) 20:30:22.360[main] fill login
+32) 20:30:22.360[main] fill password
+33) 20:30:22.361[main] fill password
+34) 20:30:22.361[main] submit registration form
+35) 20:30:22.362[main] check is error visible
+1) 20:31:31.219[main] new Mozilla firefox driver
+2) 20:31:31.269[main] http://qa.env.mysite.com
+3) 20:31:31.270[main] open home page
+4) 20:31:31.270[main] open login page
+5) 20:31:31.271[main] fill login
+6) 20:31:31.271[main] fill password
+7) 20:31:31.272[main] submit login form
+8) 20:31:31.272[main] check is logger in
+9) 20:31:31.273[main] new Mozilla firefox driver
+10) 20:31:31.274[main] http://qa.env.mysite.com
+11) 20:31:31.274[main] open home page
+12) 20:31:31.275[main] open login page
+13) 20:31:31.276[main] fill login
+14) 20:31:31.276[main] submit login form
+15) 20:31:31.276[main] check error
+16) 20:31:31.278[main] new Mozilla firefox driver
+17) 20:31:31.278[main] http://qa.env.mysite.com
+18) 20:31:31.279[main] open home page
+19) 20:31:31.279[main] open login page
+20) 20:31:31.280[main] switch to registration page
+21) 20:31:31.280[main] fill login
+22) 20:31:31.280[main] fill password
+23) 20:31:31.281[main] fill password
+24) 20:31:31.281[main] submit registration form
+25) 20:31:31.282[main] check is registration in
+26) 20:31:31.282[main] new Mozilla firefox driver
+27) 20:31:31.283[main] http://qa.env.mysite.com
+28) 20:31:31.283[main] open home page
+29) 20:31:31.283[main] open login page
+30) 20:31:31.284[main] switch to registration page
+31) 20:31:31.284[main] fill login
+32) 20:31:31.285[main] fill password
+33) 20:31:31.285[main] fill password
+34) 20:31:31.286[main] submit registration form
+35) 20:31:31.286[main] check is error visible
+1) 20:31:58.438[main] new Mozilla firefox driver
+2) 20:31:58.487[main] http://qa.env.mysite.com
+3) 20:31:58.487[main] open home page
+4) 20:31:58.488[main] open login page
+5) 20:31:58.488[main] fill login
+6) 20:31:58.489[main] fill password
+7) 20:31:58.489[main] submit login form
+8) 20:31:58.489[main] check is logger in
+9) 20:31:58.490[main] new Mozilla firefox driver
+10) 20:31:58.491[main] http://qa.env.mysite.com
+11) 20:31:58.491[main] open home page
+12) 20:31:58.492[main] open login page
+13) 20:31:58.492[main] fill login
+14) 20:31:58.493[main] submit login form
+15) 20:31:58.493[main] check error
+16) 20:31:58.494[main] new Mozilla firefox driver
+17) 20:31:58.495[main] http://qa.env.mysite.com
+18) 20:31:58.495[main] open home page
+19) 20:31:58.496[main] open login page
+20) 20:31:58.496[main] switch to registration page
+21) 20:31:58.497[main] fill login
+22) 20:31:58.497[main] fill password
+23) 20:31:58.497[main] fill password
+24) 20:31:58.498[main] submit registration form
+25) 20:31:58.498[main] check is registration in
+26) 20:31:58.499[main] new Mozilla firefox driver
+27) 20:31:58.499[main] http://qa.env.mysite.com
+28) 20:31:58.499[main] open home page
+29) 20:31:58.500[main] open login page
+30) 20:31:58.500[main] switch to registration page
+31) 20:31:58.501[main] fill login
+32) 20:31:58.501[main] fill password
+33) 20:31:58.501[main] fill password
+34) 20:31:58.502[main] submit registration form
+35) 20:31:58.502[main] check is error visible
+1) 20:36:43.878[main] new Mozilla firefox driver
+2) 20:36:43.927[main] http://prod.env.mysite.com
+3) 20:36:43.927[main] open home page
+4) 20:36:43.928[main] open login page
+5) 20:36:43.931[main] fill login
+6) 20:36:43.932[main] fill password
+7) 20:36:43.932[main] submit login form
+8) 20:36:43.933[main] check is logger in
+9) 20:36:43.933[main] new Mozilla firefox driver
+10) 20:36:43.934[main] http://prod.env.mysite.com
+11) 20:36:43.934[main] open home page
+12) 20:36:43.934[main] open login page
+13) 20:36:43.935[main] fill login
+14) 20:36:43.935[main] submit login form
+15) 20:36:43.936[main] check error
+16) 20:36:43.937[main] new Mozilla firefox driver
+17) 20:36:43.937[main] http://prod.env.mysite.com
+18) 20:36:43.938[main] open home page
+19) 20:36:43.938[main] open login page
+20) 20:36:43.939[main] switch to registration page
+21) 20:36:43.939[main] fill login
+22) 20:36:43.939[main] fill password
+23) 20:36:43.940[main] fill password
+24) 20:36:43.940[main] submit registration form
+25) 20:36:43.941[main] check is registration in
+26) 20:36:43.941[main] new Mozilla firefox driver
+27) 20:36:43.942[main] http://prod.env.mysite.com
+28) 20:36:43.942[main] open home page
+29) 20:36:43.942[main] open login page
+30) 20:36:43.943[main] switch to registration page
+31) 20:36:43.943[main] fill login
+32) 20:36:43.944[main] fill password
+33) 20:36:43.944[main] fill password
+34) 20:36:43.944[main] submit registration form
+35) 20:36:43.945[main] check is error visible

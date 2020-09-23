@@ -28,4 +28,30 @@ public class Car {
     public void setColor(String color) {
         this.color = color;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public double getEngine() {
+        return engine;
+    }
+
+    public String getFuel() {
+        return fuel;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "type='" + type + '\'' +
+                ", engine=" + engine +
+                ", fuel='" + fuel + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
 }

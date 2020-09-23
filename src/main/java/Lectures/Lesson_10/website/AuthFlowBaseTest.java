@@ -1,11 +1,12 @@
 package Lectures.Lesson_10.website;
 
-import Lectures.Lesson_10.TestBase;
+import Infrastructure.TestBase;
 
-public class AuthFlowBaseTest {
-    public class RegistrationTests extends TestBase {
+public class AuthFlowBaseTest extends TestBase {
+
         public void beforeAuth(){
-
+            logger.log("open home page");
+            logger.log("open login page");
         }
     }
-}
+

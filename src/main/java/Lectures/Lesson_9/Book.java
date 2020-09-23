@@ -1,38 +1,35 @@
 package Lectures.Lesson_9;
 
+import java.util.Objects;
 import java.util.UUID;
 
 public class Book {
-    private String id;
-    private String title;
-    private String author;
-    private String year;
-    private String description;
-    private String isbn;
+    private String id = "default ID";
+    private String title = "default title";
+    private Author author;
+    private String year = "default year";
+    private String description = "default description";
+    private String isbn = "default ISBN";
 
-    {
-//        this.id = "";
-//        this.title = "";
-//        this.Author = Author;
-//        this.year = "";
-//        this.description = "";
-//        this.isbn = "";isbn
-    }
 
-    public Book(String id, String title, String author, String year, String description, String isbn) {
+
+    public Book(String id, String title, Author author, String year, String description, String isbn) {
         this.id = id;
         this.title = title;
-        this.author = Author;
+        this.author = author;
         this.year = year;
         this.description = description;
         this.isbn = isbn;
     }
-    public Book( String title, author, String year) {
+    public Book( String title, Author author, String year) {
         this.id = UUID.randomUUID().toString();
         this.description = "";
         this.isbn = "";
-        new Book( id,  title,  author,  year,  description,  isbn);
+        this.author = author; //added
+        new Book( id,  title, author,  year,  description,  isbn);
     }
+
+
 
 
     public String getId() {
@@ -43,6 +40,7 @@ public class Book {
         this.id = id;
     }
 
+
     public String getTitle() {
         return title;
     }
@@ -51,11 +49,12 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
+
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 
@@ -84,9 +83,34 @@ public class Book {
             this.isbn = isbn;
         }
     }
+
     private boolean isIsbnValid(String isbn){
         //check valid isbn
         return false;
+    }
 
+    @Override
+    public String toString() {
+        return "Book{" +
+                "title='" + title + '\'' +
+                ", author=" + author +
+                ", year='" + year + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return Objects.equals(title, book.title) &&
+                Objects.equals(author, book.author) &&
+                Objects.equals(year, book.year) &&
+                Objects.equals(isbn, book.isbn);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, author, year, isbn);
     }
 }

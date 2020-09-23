@@ -1,5 +1,7 @@
 package HomeWorks.HomeWork_7;
 
+import java.util.Objects;
+
 public class FractionNumbers {
     private int nominator;
     private int denominator;
@@ -65,4 +67,18 @@ public class FractionNumbers {
         return String.valueOf(nominator +"/"  +denominator);
     } else return String.valueOf(nominator);
 }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        FractionNumbers numbers = (FractionNumbers) o;
+        return nominator == numbers.nominator &&
+                denominator == numbers.denominator;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nominator, denominator);
+    }
 }
