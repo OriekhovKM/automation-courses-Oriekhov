@@ -1,8 +1,9 @@
 package Lectures.Lesson_10.website;
 
 public class LoginTest extends AuthFlowBaseTest {
+   @Override
     public void beforeTest() {
-        beforeAuth();
+        super.beforeTest();
         logger.log("fill login");
 
     }

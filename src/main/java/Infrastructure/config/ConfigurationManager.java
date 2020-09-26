@@ -1,4 +1,4 @@
-package Infrastructure;
+package Infrastructure.config;
 
 public class ConfigurationManager {
     private static ConfigurationManager instance;
@@ -31,4 +31,6 @@ public class ConfigurationManager {
     public String getCurrentEnvironment() {
         return getEnvironmentVariableOrDefault("runEnv", "local");
     }
+
+    public String getRunOn() {return getEnvironmentVariableOrDefault("runEnv", "local");}
 }

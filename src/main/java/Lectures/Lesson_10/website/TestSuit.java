@@ -7,19 +7,19 @@ public class TestSuit {
         test1.loginTestPositive();
         test1.tearDown();
 
-        LoginTest test2 = new LoginTest();
+
+        test1.setup();
+        test1.loginTestNegative();
+        test1.tearDown();
+
+        RegistrationTest test2 = new RegistrationTest();
         test2.setup();
-        test2.loginTestNegative();
+        test2.registrationTestPositive();
         test2.tearDown();
 
-        RegistrationTest test3 = new RegistrationTest();
-        test3.setup();
-        test3.registrationTestPositive();
-        test3.tearDown();
 
-        RegistrationTest test4 = new RegistrationTest();
-        test4.setup();
-        test4.registrationTestNegative();
-        test4.tearDown();
+        test2.setup();
+        test2.registrationTestNegative();
+        test2.tearDown();
     }
 }
