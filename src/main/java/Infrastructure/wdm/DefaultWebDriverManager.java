@@ -11,12 +11,11 @@ public class DefaultWebDriverManager implements WebDriverManager{
         String env =  ConfigurationManager.getInstance().getRunOn();
         switch (env) {
             case "local":
-
-                return  "LocalWebDriverFactory";
+                return  new LocalWebDriverFactory().create();
             case "remote":
-                return "RemoteWebDriverFactory";
+                return new RemoteWebDriverFactory().create();
             case "cloud":
-                return "CloudWebDriverFactory";
+                return new CloudWebDriverFactory().create();
             default:
                return "";
         }

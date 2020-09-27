@@ -13,7 +13,6 @@ public class ConfigurationManager {
         return instance;
     }
 
-
     public String getEnvironmentVariableOrDefault(String envVar, String defaultValue) {
         String currentVarValue = System.getenv(envVar);
         return currentVarValue == null || currentVarValue.isEmpty() ?
@@ -32,5 +31,7 @@ public class ConfigurationManager {
         return getEnvironmentVariableOrDefault("runEnv", "local");
     }
 
-    public String getRunOn() {return getEnvironmentVariableOrDefault("runEnv", "local");}
+    public String getRunOn() {
+        return getEnvironmentVariableOrDefault("runOn", "local");
+    }
 }
