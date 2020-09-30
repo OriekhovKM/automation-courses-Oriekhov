@@ -72,16 +72,18 @@ public class TestUrl {
             return this;
         }
 
-        public String build() {
-            String url = String.valueOf(new TestUrl(this));
+        public TestUrl build() {
+            TestUrl url = new TestUrl(this);
             return url;
         }
 
 
+
         public static void main(String[] args) {
-            String url = new TestUrl.Builder()
+            TestUrl url = new TestUrl.Builder()
                     .withProtocol("https")
                     .withDomain("google")
+                    .withDomain(".com")
                     .withPort("8080")
                     .withPath("search")
                     .withPath("searchPicture")
@@ -89,28 +91,28 @@ public class TestUrl {
                     .withParam("enabled", "false")
                     .build();
 
-            String url1 = new TestUrl.Builder()
-                    .withParam("query")
-                    .withPath("search")
-                    .withParam("enabled", "false")
-                    .withProtocol("https://")
-                    .withDomain("google")
-                    .withPort("8080")
-                    .withPath("searchPicture")
-                    .build();
-
-            String url2 = new TestUrl.Builder()
-                    .withPath("search")
-                    .withParam("enabled", "false")
-                    .withProtocol("https://")
-                    .withDomain("google")
-                    .withPort("8080")
-                    .withPath("searchPicture")
-                    .build();
+//            String url1 = new TestUrl.Builder()
+//                    .withParam("query")
+//                    .withPath("search")
+//                    .withParam("enabled", "false")
+//                    .withProtocol("https://")
+//                    .withDomain("google")
+//                    .withPort("8080")
+//                    .withPath("searchPicture")
+//                    .build();
+//
+//            String url2 = new TestUrl.Builder()
+//                    .withPath("search")
+//                    .withParam("enabled", "false")
+//                    .withProtocol("https://")
+//                    .withDomain("google")
+//                    .withPort("8080")
+//                    .withPath("searchPicture")
+//                    .build();
 
             System.out.println(url);
-            System.out.println(url1);
-            System.out.println(url2);
+//            System.out.println(url1);
+//            System.out.println(url2);
         }
     }
 }
