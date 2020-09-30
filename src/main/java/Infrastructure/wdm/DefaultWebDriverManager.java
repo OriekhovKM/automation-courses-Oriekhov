@@ -24,6 +24,6 @@ public class DefaultWebDriverManager implements WebDriverManager{
 
     @Override
     public void destroyBrowser(String browser) {
-
+        if (browser != null) { System.out.println("Browser closed"); }
     }
 }

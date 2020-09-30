@@ -11,7 +11,6 @@ import Infrastructure.logging.StdTestLogger;
 public class TestBase {
 
     private WebDriverManager wdm;
-    //protected StdTestLogger logger;
     protected TestServer server;
     protected AbstractLogger logger;
     private String browser;
@@ -43,7 +42,6 @@ public class TestBase {
         if (ConfigurationManager.getInstance().getCurrentEnvironment().equals("local")){
             return new StdTestLogger();
         } else return new FileTestLogger();
-     //  return ConfigurationManager.getInstance().getCurrentEnvironment() ?
-     //          new StdTestLogger() : new FileTestLogger();
-    }
+
+      }
 }
