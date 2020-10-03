@@ -19,7 +19,7 @@ public class TestUrl {
 
     @Override
     public String toString() {
-        return "TestUrl: " +this.protocol +this.domain +this.port +this.path + this.param;
+        return this.protocol +this.domain +this.port +this.path + this.param;
     }
 
     public static class Builder {
