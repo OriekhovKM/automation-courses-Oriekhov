@@ -31,59 +31,60 @@ public class TestUrl {
 
 
         public Builder withProtocol(String protocol) {
-            if (protocol.contains("://")) {
+            if (protocol.endsWith("://")) {
                 this.protocol = protocol;
             } else this.protocol = protocol + "://";
             return this;
         }
 
         public Builder withDomain(String domain) {
-            if (domain.contains(":")) {
-                this.domain = domain;
-            } else this.domain = domain + ":";
+            if (domain.endsWith(".")) {
+                this.domain = this.domain + domain;
+            } else this.domain = this.domain + domain + ".";
             return this;
         }
 
         public Builder withPort(String port) {
-            if (port.contains("/")) {
+            if (port.startsWith(":")) {
                 this.port = port;
-            } else this.port = port + "/";
+            } else this.port =  ":" + port;
             return this;
         }
 
         public Builder withPath(String path) {
-            if (path.contains("/")) {
-                this.path = path;
-            } else this.path = path + "/";
+            if (path.startsWith("/")) {
+                this.path = this.path + path;
+            } else this.path = this.path + "/" + path;
             return this;
         }
 
         public Builder withParam(String param) {
-            if (param.contains("?")) {
+            if (param.startsWith("?")) {
                 this.param = param;
-            } else this.param = param + "?";
+            } else this.param = "?"  + param;
             return this;
         }
 
         public Builder withParam(String param1, String param2) {
-            if (param1.contains("=")) {
+            if (param1.contains("&")) {
                 this.param = param + param1 + param2;
-            } else this.param = param + param1 + "=" + param2;
+            } else this.param = param + param1 + "&" + param2;
             return this;
         }
 
         public TestUrl build() {
+            if (this.domain.endsWith(".")){
+               this.domain = this.domain.substring(0, this.domain.length()-1);
+            }
             TestUrl url = new TestUrl(this);
             return url;
         }
-
-
 
         public static void main(String[] args) {
             TestUrl url = new TestUrl.Builder()
                     .withProtocol("https")
                     .withDomain("google")
-                    .withDomain(".com")
+                    .withDomain("com")
                     .withPort("8080")
                     .withPath("search")
                     .withPath("searchPicture")
@@ -91,28 +92,7 @@ public class TestUrl {
                     .withParam("enabled", "false")
                     .build();
 
-//            String url1 = new TestUrl.Builder()
-//                    .withParam("query")
-//                    .withPath("search")
-//                    .withParam("enabled", "false")
-//                    .withProtocol("https://")
-//                    .withDomain("google")
-//                    .withPort("8080")
-//                    .withPath("searchPicture")
-//                    .build();
-//
-//            String url2 = new TestUrl.Builder()
-//                    .withPath("search")
-//                    .withParam("enabled", "false")
-//                    .withProtocol("https://")
-//                    .withDomain("google")
-//                    .withPort("8080")
-//                    .withPath("searchPicture")
-//                    .build();
-
             System.out.println(url);
-//            System.out.println(url1);
-//            System.out.println(url2);
         }
     }
 }
