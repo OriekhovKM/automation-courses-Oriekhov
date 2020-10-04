@@ -13,7 +13,7 @@ public class RandomString {
         StringUtils(String value) {this.value = value;}
     }
 
-    public String stringGenerator(Enum mode, int length) {
+    public String stringGenerator(RandomString.StringUtils mode, int length) {
         StringBuilder result = new StringBuilder();
         Random rand = new Random();
         String tempString = "";
