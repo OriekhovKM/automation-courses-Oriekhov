@@ -1,4 +1,4 @@
-package Infrastructure;
+package Infrastructure.config;
 
 public class ConfigurationManager {
     private static ConfigurationManager instance;
@@ -12,7 +12,6 @@ public class ConfigurationManager {
         }
         return instance;
     }
-
 
     public String getEnvironmentVariableOrDefault(String envVar, String defaultValue) {
         String currentVarValue = System.getenv(envVar);
@@ -30,5 +29,9 @@ public class ConfigurationManager {
 
     public String getCurrentEnvironment() {
         return getEnvironmentVariableOrDefault("runEnv", "local");
+    }
+
+    public String getRunOn() {
+        return getEnvironmentVariableOrDefault("runOn", "local");
     }
 }

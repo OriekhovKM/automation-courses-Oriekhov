@@ -1,7 +1,10 @@
-package Infrastructure;
+package Infrastructure.wdm;
 
-public class WebDriverManager {
-    public String createBrowser() {
+import Infrastructure.config.ConfigurationManager;
+
+public class CloudWebDriverFactory implements WebDriverFactory{
+    @Override
+    public  String create() {
         String testBrowser = ConfigurationManager.getInstance().getTestBrowser();
         switch (testBrowser) {
             case "chrome":
@@ -10,12 +13,6 @@ public class WebDriverManager {
                 return "new Mozilla firefox driver";
             default:
                 return "";
-        }
-    }
-
-    public void destroyBrowser(String browser) {
-        if (browser != null) {
-            System.out.println("Browser closed");
         }
     }
 }

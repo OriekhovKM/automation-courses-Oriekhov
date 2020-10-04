@@ -1,5 +1,7 @@
 package Infrastructure;
 
+import Infrastructure.config.ConfigurationManager;
+
 public class TestServer {
 
     public String getUrl() {

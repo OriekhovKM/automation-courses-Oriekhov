@@ -1,6 +1,6 @@
 package HomeWorks.HomeWork_7;
 
-import Infrastructure.RandomString;
+import Infrastructure.utils.RandomString;
 
 public class RunRandomString {
     public static void main(String[] args) {

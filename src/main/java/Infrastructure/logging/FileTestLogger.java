@@ -5,21 +5,45 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
-public class FileTestLogger extends AbstractLogger {
+public class FileTestLogger implements AbstractLogger {
 
     private Object FileWriter;
 
     @Override
     public void log(String operation) {
-            try {
-                java.io.FileWriter fileWriter = new FileWriter(new File("log.txt"), true);
-                fileWriter.write(getEntry(operation)+'\n');
-                fileWriter.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        try {
+            FileWriter fileWriter = new FileWriter(new File("log.txt"), true);
+            fileWriter.write(operation + "\n");
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void atStart() {
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter(new File("log.txt"), true);
+            fileWriter.write(String.format(WELCOME_MESSAGE, LocalDateTime.now()) + "\n");
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void atFinish() {
+        try {
+            FileWriter fileWriter = new FileWriter(new File("log.txt"), true);
+            fileWriter.write(String.format(FINAL_MESSAGE, LocalDateTime.now()+"\n"));
+            fileWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 

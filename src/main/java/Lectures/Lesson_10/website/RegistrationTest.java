@@ -3,8 +3,9 @@ package Lectures.Lesson_10.website;
 
 
 public class RegistrationTest extends AuthFlowBaseTest {
+    @Override
     public void beforeTest() {
-        beforeAuth();
+        super.beforeTest();
         logger.log("switch to registration page");
         logger.log("fill login");
         logger.log("fill password");
