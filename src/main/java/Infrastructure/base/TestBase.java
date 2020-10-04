@@ -39,9 +39,7 @@ public class TestBase {
     }
 
     public  AbstractLogger getLogger(){
-        if (ConfigurationManager.getInstance().getCurrentEnvironment().equals("local")){
-            return new StdTestLogger();
-        } else return new FileTestLogger();
-
-      }
+      return ConfigurationManager.getInstance().getCurrentEnvironment() ?
+        new StdTestLogger() : new FileTestLogger();
+    }
 }
