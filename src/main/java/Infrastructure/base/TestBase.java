@@ -3,6 +3,7 @@ package Infrastructure.base;
 import Infrastructure.config.ConfigurationManager;
 import Infrastructure.TestServer;
 import Infrastructure.wdm.DefaultWebDriverManager;
+import Infrastructure.wdm.RunOn;
 import Infrastructure.wdm.WebDriverManager;
 import Infrastructure.logging.AbstractLogger;
 import Infrastructure.logging.FileTestLogger;

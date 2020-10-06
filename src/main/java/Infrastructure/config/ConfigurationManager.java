@@ -1,5 +1,9 @@
 package Infrastructure.config;
 
+import Infrastructure.wdm.BrowserType;
+import Infrastructure.wdm.DefaultWebDriverManager;
+import Infrastructure.wdm.RunOn;
+
 public class ConfigurationManager {
     private static ConfigurationManager instance;
 
@@ -19,9 +23,6 @@ public class ConfigurationManager {
                 defaultValue : currentVarValue;
     }
 
-    public String getTestBrowser() {
-        return getEnvironmentVariableOrDefault("browser", "chrome");
-    }
 
     public String getTestEnvironment() {
         return getEnvironmentVariableOrDefault("environment", "qa_env");
@@ -31,7 +32,21 @@ public class ConfigurationManager {
         return getEnvironmentVariableOrDefault("runEnv", "local");
     }
 
-    public String getRunOn() {
-        return getEnvironmentVariableOrDefault("runOn", "local");
+
+    RunOn runOn = RunOn.CLOUD;
+    BrowserType browser;
+
+    public Enum getEnumEnvironments(Enum envVar, Enum defaultValue) {
+        Enum currentVarValue = envVar;
+        return currentVarValue == null ?
+                defaultValue : currentVarValue;
+    }
+
+    public Enum getRunOn() {
+        return getEnumEnvironments(runOn, RunOn.LOCAL);
+    }
+
+    public Enum getTestBrowser() {
+        return getEnumEnvironments(browser, BrowserType.OPERA);
     }
 }

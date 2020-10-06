@@ -6,7 +6,6 @@ public class LocalWebDriverFactory implements WebDriverFactory{
 
     @Override
     public String create() {
-
-        return ConfigurationManager.getInstance().getTestBrowser();
+        return "local " + ConfigurationManager.getInstance().getTestBrowser();
     }
 }
