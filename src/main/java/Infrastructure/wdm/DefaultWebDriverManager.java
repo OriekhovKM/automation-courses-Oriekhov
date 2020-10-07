@@ -3,6 +3,7 @@ package Infrastructure.wdm;
 import Infrastructure.config.ConfigurationManager;
 
 
+
 public class DefaultWebDriverManager implements WebDriverManager {
 
 
@@ -25,10 +26,10 @@ public class DefaultWebDriverManager implements WebDriverManager {
             case CLOUD:
                 return new CloudWebDriverFactory().create();
         }
+
     }
 
     @Override
     public void destroyBrowser(String browser) {
-
-    }
+}
 }

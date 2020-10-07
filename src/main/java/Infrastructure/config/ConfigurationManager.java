@@ -1,5 +1,6 @@
 package Infrastructure.config;
 
+
 import Infrastructure.wdm.BrowserType;
 import Infrastructure.wdm.DefaultWebDriverManager;
 import Infrastructure.wdm.RunOn;
@@ -24,6 +25,7 @@ public class ConfigurationManager {
     }
 
 
+
     public String getTestEnvironment() {
         return getEnvironmentVariableOrDefault("environment", "qa_env");
     }
@@ -33,11 +35,13 @@ public class ConfigurationManager {
     }
 
 
+
     public RunOn getRunOn() {
         return RunOn.valueOf(getEnvironmentVariableOrDefault("runOn", "LOCAL"));
     }
 
     public BrowserType getTestBrowser() {
         return BrowserType.valueOf(getEnvironmentVariableOrDefault("browser", "CHROME"));
+
     }
 }

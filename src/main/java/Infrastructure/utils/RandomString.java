@@ -3,6 +3,7 @@ package Infrastructure.utils;
 import java.util.Random;
 
 public class RandomString {
+
     public enum StringUtils{
         ALPHABET ("abcdefghijklmnopqrstuvwxyz"),
         NUMS("0123456789"),
@@ -14,9 +15,13 @@ public class RandomString {
     }
 
     public String stringGenerator(RandomString.StringUtils mode, int length) {
+
+
+  
         StringBuilder result = new StringBuilder();
         Random rand = new Random();
         String tempString = "";
+
 
         if (mode.equals(StringUtils.ALPHABET)) {
             tempString = StringUtils.ALPHABET.value;
@@ -26,6 +31,7 @@ public class RandomString {
         }
         else  if (mode.equals(StringUtils.NUMS)) {
             tempString = StringUtils.NUMS.value;
+
         }
 
         StringBuilder build = new StringBuilder();
