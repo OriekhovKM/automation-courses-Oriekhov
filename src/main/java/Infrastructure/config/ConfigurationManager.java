@@ -1,5 +1,10 @@
 package Infrastructure.config;
 
+
+import Infrastructure.wdm.BrowserType;
+import Infrastructure.wdm.DefaultWebDriverManager;
+import Infrastructure.wdm.RunOn;
+
 public class ConfigurationManager {
     private static ConfigurationManager instance;
 
@@ -19,9 +24,7 @@ public class ConfigurationManager {
                 defaultValue : currentVarValue;
     }
 
-    public String getTestBrowser() {
-        return getEnvironmentVariableOrDefault("browser", "chrome");
-    }
+
 
     public String getTestEnvironment() {
         return getEnvironmentVariableOrDefault("environment", "qa_env");
@@ -31,7 +34,14 @@ public class ConfigurationManager {
         return getEnvironmentVariableOrDefault("runEnv", "local");
     }
 
-    public String getRunOn() {
-        return getEnvironmentVariableOrDefault("runOn", "local");
+
+
+    public RunOn getRunOn() {
+        return RunOn.valueOf(getEnvironmentVariableOrDefault("runOn", "LOCAL"));
+    }
+
+    public BrowserType getTestBrowser() {
+        return BrowserType.valueOf(getEnvironmentVariableOrDefault("browser", "CHROME"));
+
     }
 }

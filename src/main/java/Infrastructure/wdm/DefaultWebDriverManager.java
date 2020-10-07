@@ -2,30 +2,34 @@ package Infrastructure.wdm;
 
 import Infrastructure.config.ConfigurationManager;
 
-public class DefaultWebDriverManager implements WebDriverManager{
 
+
+public class DefaultWebDriverManager implements WebDriverManager {
+
+
+    public DefaultWebDriverManager() {
+
+    }
 
     @Override
     public String getBrowser() {
+        RunOn runOn = (RunOn) ConfigurationManager.getInstance().getRunOn();
 
-        String env =  ConfigurationManager.getInstance().getRunOn();
-        switch (env) {
-            case "local":
-                return  new LocalWebDriverFactory().create();
-            case "remote":
-                return new RemoteWebDriverFactory().create();
-            case "cloud":
-                return new CloudWebDriverFactory().create();
+        switch (runOn) {
+            case LOCAL:
             default:
-               return "";
+                return new LocalWebDriverFactory().create();
+
+            case REMOTE:
+                return new RemoteWebDriverFactory().create();
+
+            case CLOUD:
+                return new CloudWebDriverFactory().create();
         }
 
     }
 
     @Override
     public void destroyBrowser(String browser) {
-        if (browser != null) { 
-          System.out.println("Browser closed");
-        }
-    }
+}
 }
