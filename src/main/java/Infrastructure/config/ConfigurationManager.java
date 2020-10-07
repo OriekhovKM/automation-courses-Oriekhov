@@ -33,20 +33,11 @@ public class ConfigurationManager {
     }
 
 
-    RunOn runOn = RunOn.CLOUD;
-    BrowserType browser;
-
-    public Enum getEnumEnvironments(Enum envVar, Enum defaultValue) {
-        Enum currentVarValue = envVar;
-        return currentVarValue == null ?
-                defaultValue : currentVarValue;
+    public RunOn getRunOn() {
+        return RunOn.valueOf(getEnvironmentVariableOrDefault("runOn", "LOCAL"));
     }
 
-    public Enum getRunOn() {
-        return getEnumEnvironments(runOn, RunOn.LOCAL);
-    }
-
-    public Enum getTestBrowser() {
-        return getEnumEnvironments(browser, BrowserType.OPERA);
+    public BrowserType getTestBrowser() {
+        return BrowserType.valueOf(getEnvironmentVariableOrDefault("browser", "CHROME"));
     }
 }
