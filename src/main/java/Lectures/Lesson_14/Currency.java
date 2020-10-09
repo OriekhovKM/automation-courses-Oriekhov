@@ -1,6 +1,6 @@
 package Lectures.Lesson_14;
 
-public enum Currency implements Size{
+public enum Currency {
 
     UAH("ukraine", 980, 20, 150),
     USD("usa", 840,20, 150),
@@ -26,26 +26,6 @@ public enum Currency implements Size{
     public String getCountry() {
         return country;
     }
-
-    @Override
-    public int getWidth() {
-        return 0;
-    }
-
-    @Override
-    public int getHeight() {
-        return 0;
-    }
-
-//    @Override
-//    public int getWidth() {
-//        return curWidth();
-//    }
-//
-//    @Override
-//    public int getHeight() {
-//        return curHeight();;
-//    }
 
 
 }

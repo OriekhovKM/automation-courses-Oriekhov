@@ -6,6 +6,14 @@ public class CloudWebDriverFactory implements WebDriverFactory{
     @Override
     public  String create() {
 
-        return "cloud " +ConfigurationManager.getInstance().getTestBrowser();
+        BrowserType testBrowser = ConfigurationManager.getInstance().getTestBrowser();
+        switch (testBrowser) {
+            case CHROME:
+                return "cloud new Google Chrome driver";
+            case FIREFOX:
+                return "cloud new Mozilla Firefox driver";
+            default:
+                return "";
         }
+    }
 }
