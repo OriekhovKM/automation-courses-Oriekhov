@@ -1,6 +1,6 @@
 package Infrastructure.data;
 
-public interface DataMapper {
+public interface UserDataMapper {
     User findUserByEmail(String email);
     User findUserByName(String name);
 }
