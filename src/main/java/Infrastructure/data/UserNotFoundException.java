@@ -1,8 +1,8 @@
 package Infrastructure.data;
 
 public class UserNotFoundException extends Exception{
-    public UserNotFoundException() {
-        System.err.println("User not found");
+    public UserNotFoundException(String message) {
+        super(message);
     }
 
 }

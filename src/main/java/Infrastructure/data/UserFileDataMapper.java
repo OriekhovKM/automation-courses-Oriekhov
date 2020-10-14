@@ -3,7 +3,7 @@ package Infrastructure.data;
 import java.io.*;
 
 public class UserFileDataMapper implements UserDataMapper {
-    User[] users = new User[10];
+    User[] users = new User[9];
 
     public UserFileDataMapper() {
         try (BufferedReader reader = new BufferedReader(new FileReader(new File("users.txt")))) {
@@ -27,22 +27,34 @@ public class UserFileDataMapper implements UserDataMapper {
     }
 
     @Override
-    public User findUserByEmail(String email) {
-        for (User user : users) {
-            if (user.getUserEmail().equals(email)) {
-                return user;
-            }
-        }
-        return null;
+    public User findUserByEmail(String email)  {
+       try {
+           for ( User user : users) {
+               if (user.getUserEmail().equals(email)) {
+                   return user;
+               }
+           }
+           throw new UserNotFoundException("User not found");
+       } catch (UserNotFoundException e){
+           System.out.print(e.getMessage() + " by email. Method returned  ");
+       }
+       return null;
     }
 
 
     @Override
-    public User findUserByName(String name) {
-        for (User user : users) {
-            if (user.getUserName().equals(name)) {
-                return user;
+    public User findUserByName(String name){
+     try {
+            for (User user : users) {
+
+                if (user.getUserName().equals(name)) {
+                    return user;
+                }
             }
+          throw new UserNotFoundException("User not found");
+        } catch (UserNotFoundException e) {
+            System.out.print(e.getMessage() +" by name. Method returned  ");
+
         }
         return null;
     }

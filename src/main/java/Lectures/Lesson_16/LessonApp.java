@@ -12,17 +12,13 @@ public class LessonApp {
     public static void main(String[] args) {
         UserFileDataMapper mapper = new UserFileDataMapper();
 
-        String name = "user 1";
-        String email ="user11@gmail.com";
-        try{
-            User user = mapper.findUserByEmail(email);
-        if (user == null) {
-            throw new UserNotFoundException();
-        } System.out.println(user);
+        String name = "user9";
+        String email ="user 1@gmail.com";
 
-        }catch (UserNotFoundException e){
 
-        }
+        System.out.println(mapper.findUserByEmail(email));
+        System.out.println(mapper.findUserByName(name));
+
 
     }
 }
