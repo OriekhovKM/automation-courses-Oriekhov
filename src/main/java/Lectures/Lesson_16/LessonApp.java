@@ -9,11 +9,11 @@ import java.util.Arrays;
 
 public class LessonApp {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UserNotFoundException {
         UserFileDataMapper mapper = new UserFileDataMapper();
 
-        String name = "user9";
-        String email ="user 1@gmail.com";
+        String name = "user 3";
+        String email ="user9@gmail.com";
 
 
         System.out.println(mapper.findUserByEmail(email));

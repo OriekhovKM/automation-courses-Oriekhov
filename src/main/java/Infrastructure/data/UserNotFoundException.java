@@ -1,8 +1,7 @@
 package Infrastructure.data;
 
-public class UserNotFoundException extends Exception{
-    public UserNotFoundException(String message) {
-        super(message);
+public class UserNotFoundException extends IllegalAccessException{
+    public UserNotFoundException(String s) {
+        super(s);
     }
-
 }

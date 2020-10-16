@@ -3,7 +3,7 @@ package Infrastructure.data;
 import java.io.*;
 
 public class UserFileDataMapper implements UserDataMapper {
-    User[] users = new User[9];
+    User[] users = new User[10];
 
     public UserFileDataMapper() {
         try (BufferedReader reader = new BufferedReader(new FileReader(new File("users.txt")))) {
@@ -27,39 +27,30 @@ public class UserFileDataMapper implements UserDataMapper {
     }
 
     @Override
-    public User findUserByEmail(String email)  {
-       try {
+    public User findUserByEmail(String email) throws UserNotFoundException {
+
            for ( User user : users) {
-               if (user.getUserEmail().equals(email)) {
+               if (user != null && user.getUserEmail().equals(email)) {
                    return user;
                }
            }
-           throw new UserNotFoundException("User not found");
-       } catch (UserNotFoundException e){
-           System.out.print(e.getMessage() + " by email. Method returned  ");
-       }
-       return null;
+           throw new UserNotFoundException(String.format("User with email '%s' not found ", email));
     }
 
 
     @Override
-    public User findUserByName(String name){
-     try {
+    public User findUserByName(String name) throws UserNotFoundException {
             for (User user : users) {
 
-                if (user.getUserName().equals(name)) {
+                if (user != null && user.getUserName().equals(name)) {
                     return user;
                 }
             }
-          throw new UserNotFoundException("User not found");
-        } catch (UserNotFoundException e) {
-            System.out.print(e.getMessage() +" by name. Method returned  ");
+                throw new UserNotFoundException(String.format("User with name '%s' not found", name));
+            }
 
+            public User[] getAll () {
+                return users;
+            }
         }
-        return null;
-    }
 
-    public User[] getAll() {
-        return users;
-    }
-}
