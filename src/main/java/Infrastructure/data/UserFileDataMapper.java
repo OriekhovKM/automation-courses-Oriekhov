@@ -2,10 +2,10 @@ package Infrastructure.data;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class UserFileDataMapper implements UserDataMapper {
-    ArrayList users = new ArrayList(10);
-   // ArrayList splitedUser = new ArrayList();
+    List<User> users = new ArrayList();
 
     public UserFileDataMapper() {
         try (BufferedReader reader = new BufferedReader(new FileReader(new File("users.txt")))) {
@@ -26,33 +26,29 @@ public class UserFileDataMapper implements UserDataMapper {
 
     @Override
     public User findUserByEmail(String email) throws UserNotFoundException {
-        User user;
+
         for (int i = 0; i < users.size(); i++) {
-           user = (User) users.get(i);
-            if (user != null && user.getUserEmail().equals(email)) {
-                   return user;
-             }
+            users.get(i);
+            if (users.get(i) != null && users.get(i).getUserEmail().equals(email)) {
+                return users.get(i);
+            }
         }
-           throw new UserNotFoundException(String.format("User with email '%s' not found ", email));
+        throw new UserNotFoundException(String.format("User with email '%s' not found ", email));
     }
 
 
     @Override
     public User findUserByName(String name) throws UserNotFoundException {
-        User user;
         for (int i = 0; i < users.size(); i++) {
-            user = (User) users.get(i);
-            if (user != null && user.getUserName().equals(name)) {
-                return user;
+            users.get(i);
+            if (users.get(i) != null && users.get(i).getUserName().equals(name)) {
+                return users.get(i);
             }
         }
         throw new UserNotFoundException(String.format("User with name '%s' not found", name));
     }
 
-
-
-        public ArrayList getAll () {
-            return users;
-        }
-
+    public ArrayList getAll() {
+        return (ArrayList) users;
     }
+}

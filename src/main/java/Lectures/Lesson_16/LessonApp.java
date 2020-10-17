@@ -14,8 +14,8 @@ public class LessonApp {
         UserFileDataMapper mapper = new UserFileDataMapper();
 
 
-        String name = "user 1";
-        String email ="user9@gmail.com";
+        String name = "user1";
+        String email ="user 9@gmail.com";
 
         System.out.println(mapper.getAll());
         System.out.println(mapper.findUserByEmail(email));
