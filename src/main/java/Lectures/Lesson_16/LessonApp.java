@@ -18,6 +18,7 @@ public class LessonApp {
         String email ="user 9@gmail.com";
 
         System.out.println(mapper.getAll());
+
         System.out.println(mapper.findUserByEmail(email));
         System.out.println(mapper.findUserByName(name));
 
