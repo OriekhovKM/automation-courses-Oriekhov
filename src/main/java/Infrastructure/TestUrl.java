@@ -1,33 +1,22 @@
 package Infrastructure;
 
+import java.util.HashMap;
+import java.util.stream.Collectors;
+
 public class TestUrl {
     private String protocol;
     private String domain;
     private String port;
     private String path;
-    private String param;
+    private HashMap<String, String> param;
 
-
-    private TestUrl (Builder builder) {
-        this.protocol = builder.protocol;
-        this.domain = builder.domain;
-        this.port = builder.port;
-        this.path = builder.path;
-        this.param = builder.param;
-
-    }
-
-    @Override
-    public String toString() {
-        return this.protocol +this.domain +this.port +this.path + this.param;
-    }
 
     public static class Builder {
         private String protocol = "";
         private String domain = "";
         private String port = "";
         private String path = "";
-        private String param = "";
+        HashMap<String, String> param = new HashMap<String, String>();
 
 
         public Builder withProtocol(String protocol) {
@@ -58,38 +47,45 @@ public class TestUrl {
             return this;
         }
 
-        public Builder withParam(String param) {
-            if (param.startsWith("?")) {
-                this.param = param;
-            } else this.param = "?"  + param;
-            return this;
+        public Builder withParam(HashMap<String,String>param) {
+           this.param = param;
+           return this;
+        }
+        public String hashMapToString(HashMap<String, String> map) {
+            String mapAsString = map.keySet().stream()
+                    .map(key -> key + "=" + map.get(key))
+                    .collect(Collectors.joining("&", "", ""));
+            return mapAsString;
         }
 
-        public Builder withParam(String param1, String param2) {
-            if (param1.contains("&")) {
-                this.param = param + param1 + param2;
-            } else this.param = param + param1 + "&" + param2;
-            return this;
-        }
-
-        public TestUrl build() {
+        public String build() {
             if (this.domain.endsWith(".")){
                 this.domain = this.domain.substring(0, this.domain.length()-1);
             }
-            TestUrl url = new TestUrl(this);
-            return url;
+
+            return new StringBuilder()
+                    .append(this.protocol)
+                    .append(this.domain)
+                    .append(this.port)
+                    .append(this.path)
+                    .append(hashMapToString(this.param))
+                    .toString();
         }
 
         public static void main(String[] args) {
-            TestUrl url = new TestUrl.Builder()
+            HashMap <String, String> param = new HashMap<String, String>();
+            param.put ("?q", "query");
+            param.put ("oq", "123456789");
+            param.put ("sq", "params+this");
+
+            String url = new TestUrl.Builder()
                     .withProtocol("https")
                     .withDomain("google")
                     .withDomain("com")
                     .withPort("8080")
                     .withPath("search")
                     .withPath("searchPicture")
-                    .withParam("query")
-                    .withParam("enabled", "false")
+                    .withParam(param)
                     .build();
 
             System.out.println(url);

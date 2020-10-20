@@ -30,7 +30,7 @@ public class UserFileDataMapper implements UserDataMapper {
     @Override
     public User findUserByEmail(String email) throws UserNotFoundException {
 
-14
+
         for (int i = 0; i < users.size(); i++) {
             users.get(i);
             if (users.get(i) != null && users.get(i).getUserEmail().equals(email)) {
