@@ -74,7 +74,7 @@ public class TestUrl {
 
         public TestUrl build() {
             if (this.domain.endsWith(".")){
-               this.domain = this.domain.substring(0, this.domain.length()-1);
+                this.domain = this.domain.substring(0, this.domain.length()-1);
             }
             TestUrl url = new TestUrl(this);
             return url;
