@@ -1,7 +1,10 @@
 package Infrastructure;
 
-import java.util.HashMap;
+
+
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class TestUrl {
     private String protocol;
@@ -9,6 +12,9 @@ public class TestUrl {
     private String port;
     private String path;
     private HashMap<String, String> param;
+
+
+
 
 
     public static class Builder {
@@ -47,16 +53,34 @@ public class TestUrl {
             return this;
         }
 
+        public Builder withParam(String param) {
+            this.param.put("?"+param,"");
+            return this;
+        }
+
+        public Builder withParam(String param1, String param2) {
+            this.param.put(param1, param2);
+            return this;
+        }
+
+
         public Builder withParam(HashMap<String,String>param) {
-           this.param = param;
+
+           this.param.putAll(param);
            return this;
         }
         public String hashMapToString(HashMap<String, String> map) {
+//            HashMap<String, String> reverseParam = new HashMap<String, String>();
+//            List<String> reverseOrderedKeys = new ArrayList<String>(map.keySet());
+//            Collections.reverse(reverseOrderedKeys);
+//            reverseOrderedKeys.forEach((key)->reverseParam.put(key,map.get(key)));
+
             String mapAsString = map.keySet().stream()
                     .map(key -> key + "=" + map.get(key))
                     .collect(Collectors.joining("&", "", ""));
             return mapAsString;
         }
+
 
         public String build() {
             if (this.domain.endsWith(".")){
@@ -78,6 +102,7 @@ public class TestUrl {
             param.put ("oq", "123456789");
             param.put ("sq", "params+this");
 
+
             String url = new TestUrl.Builder()
                     .withProtocol("https")
                     .withDomain("google")
@@ -85,6 +110,10 @@ public class TestUrl {
                     .withPort("8080")
                     .withPath("search")
                     .withPath("searchPicture")
+                    .withParam("param1")
+                    .withParam("param2", "param3")
+                    .withParam("param4", "param5")
+                    .withParam("param6", "param7")
                     .withParam(param)
                     .build();
 
