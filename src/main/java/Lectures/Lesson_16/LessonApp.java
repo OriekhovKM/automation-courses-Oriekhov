@@ -1,12 +1,7 @@
 package Lectures.Lesson_16;
 
-import Infrastructure.data.User;
 import Infrastructure.data.UserFileDataMapper;
 import Infrastructure.data.UserNotFoundException;
-import Lectures.Lesson_16.generic.Box;
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class LessonApp {
 
@@ -14,8 +9,8 @@ public class LessonApp {
         UserFileDataMapper mapper = new UserFileDataMapper();
 
 
-        String name = "user1";
-        String email ="user 9@gmail.com";
+        String name = "user11";
+        String email ="user9@gmail.com";
 
         System.out.println(mapper.getAll());
 

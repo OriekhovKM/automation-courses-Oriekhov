@@ -7,9 +7,14 @@ import java.util.List;
 
 public class UserFileDataMapper implements UserDataMapper {
     List<User> users = new ArrayList();
+    private final static String USER_FILE_PATCH = "users.txt";
+
+    public UserFileDataMapper(){
+        this(USER_FILE_PATCH);
+    }
   
-    public UserFileDataMapper() {
-        try (BufferedReader reader = new BufferedReader(new FileReader(new File("users.txt")))) {
+    public UserFileDataMapper(String path) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(new File(path)))) {
             String rb = null;
 
             int i = 0;
@@ -21,9 +26,9 @@ public class UserFileDataMapper implements UserDataMapper {
             }
 
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            throw new IllegalArgumentException("unable to read data from file");
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IllegalArgumentException("unable to work with I/O streams");
         }
     }
 
