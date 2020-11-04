@@ -4,9 +4,8 @@ package Infrastructure;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class TestUrl {
+public class UrlBuilder {
     private String protocol;
     private String domain;
     private String port;
@@ -70,10 +69,6 @@ public class TestUrl {
            return this;
         }
         public String hashMapToString(HashMap<String, String> map) {
-//            HashMap<String, String> reverseParam = new HashMap<String, String>();
-//            List<String> reverseOrderedKeys = new ArrayList<String>(map.keySet());
-//            Collections.reverse(reverseOrderedKeys);
-//            reverseOrderedKeys.forEach((key)->reverseParam.put(key,map.get(key)));
 
             String mapAsString = map.keySet().stream()
                     .map(key -> key + "=" + map.get(key))
@@ -98,13 +93,13 @@ public class TestUrl {
 
         public static void main(String[] args) {
             HashMap <String, String> param = new HashMap<String, String>();
-            param.put ("?q", "query");
+            param.put ("q", "query");
             param.put ("oq", "123456789");
             param.put ("sq", "params+this");
 
 
-            String url = new TestUrl.Builder()
-                    .withProtocol("https")
+            String url = new UrlBuilder.Builder()
+                    .withProtocol("http")
                     .withDomain("google")
                     .withDomain("com")
                     .withPort("8080")
