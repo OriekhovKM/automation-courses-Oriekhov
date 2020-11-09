@@ -18,6 +18,10 @@ public class RandomString {
 
     public String stringGenerator(RandomString.StringUtils mode, int length) {
 
+        if (length<1){
+            throw new IllegalArgumentException("length less then 1 not permitted");
+        }
+
         Random rand = new Random();
         String tempString = "";
 

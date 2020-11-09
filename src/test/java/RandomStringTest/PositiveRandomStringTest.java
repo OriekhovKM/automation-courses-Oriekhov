@@ -1,7 +1,9 @@
 package RandomStringTest;
 
 import Infrastructure.utils.RandomString;
+import org.assertj.core.api.SoftAssertions;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -10,13 +12,16 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import static Infrastructure.utils.RandomString.StringUtils.*;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsString;
+
 
 @RunWith(Parameterized.class)
 public class PositiveRandomStringTest {
     private RandomString.StringUtils type;
     private String controlData;
     private int length;
-
+    private SoftAssertions softAssertions;
 
     public PositiveRandomStringTest(String controlData, RandomString.StringUtils type, int length) {
         this.controlData = controlData;
@@ -32,6 +37,11 @@ public class PositiveRandomStringTest {
                 {"abcdefghijklmnopqrstuvwxyz0123456789", ALPANUMERIC, 30}
         });
     }
+    @Before
+    public void setUp(){
+        softAssertions = new SoftAssertions();
+    }
+
 
     @Test
     public void stringGeneratorContentTest() {
@@ -46,6 +56,14 @@ public class PositiveRandomStringTest {
                 actual = index;
             }
         }
+
+        if (type == ALPANUMERIC) {
+            System.out.println("additional ALPHANUMERIC ContentTest");
+            if (!actualResult.matches(".*[a-z].*")||!actualResult.matches(".*[0-9].*")) {
+                actual = -1;
+                Assert.assertEquals("generated ALPHANUMERIC string doesn't contain declared content ", 0, actual);
+            }
+        }
         Assert.assertEquals("generated string contains an error character", 0, actual);
         System.out.println("stringGeneratorContentTest with type " + type);
     }
@@ -53,8 +71,18 @@ public class PositiveRandomStringTest {
     @Test
     public void stringGeneratorLengthTest() {
         String actualResult = new RandomString().stringGenerator(type, length);
-        Assert.assertEquals("length of generated string is wrong", length, actualResult.length());
+        softAssertions.assertThat(length).isEqualTo(actualResult.length());
+       // Assert.assertEquals("length of generated string is wrong", length, actualResult.length());
         System.out.println("stringGeneratorLengthTest with length " + length);
+    }
+
+    @Test
+    public void stringGeneratorShvetcContentTest() {
+        String actualResult = new RandomString().stringGenerator(type, length);
+        for (String element: actualResult.split("") ) {
+            assertThat(controlData, containsString(element));
+        }
+        System.out.println("stringGeneratorShvetcContentTest with type " + type);
     }
 }
 
