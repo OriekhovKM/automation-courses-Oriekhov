@@ -6,7 +6,7 @@ public class RandomString {
 
     public enum StringUtils {
         ALPHABET("abcdefghijklmnopqrstuvwxyz"),
-        NUMS("0123456789"),
+        NUMS("0123456789aaaaa"),
         ALPANUMERIC("abcdefghijklmnopqrstuvwxyz" + "0123456789");
 
         private final String value;
@@ -28,7 +28,7 @@ public class RandomString {
         if (mode.equals(StringUtils.ALPHABET)) {
             tempString = StringUtils.ALPHABET.value;
         } else if (mode.equals(StringUtils.ALPANUMERIC)) {
-            tempString = StringUtils.ALPANUMERIC.value;
+            tempString = StringUtils.NUMS.value;
         } else if (mode.equals(StringUtils.NUMS)) {
             tempString = StringUtils.NUMS.value;
         }
