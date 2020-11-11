@@ -81,6 +81,22 @@ public class UrlBuilder {
             if (this.domain.endsWith(".")){
                 this.domain = this.domain.substring(0, this.domain.length()-1);
             }
+            String error = "please enter:\n";
+            if(this.protocol.equals("")){
+                error = error+"protocol;\n";
+
+            }
+            if(this.domain.equals("")){
+                error = error+"domain;\n";
+
+            }
+            if(this.port.equals("")){
+                error = error+"port;\n";
+
+            }
+            if (!error.equals("please enter:\n")){
+                return error;
+            }
 
             return new StringBuilder()
                     .append(this.protocol)
@@ -113,6 +129,12 @@ public class UrlBuilder {
                     .build();
 
             System.out.println(url);
+            String url1 = new UrlBuilder.Builder()
+
+                    .withPort("8080")
+                    .build();
+
+            System.out.println(url1);
         }
     }
 }
