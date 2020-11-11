@@ -2,7 +2,7 @@ package RandomStringTest;
 
 import Infrastructure.utils.RandomString;
 import org.assertj.core.api.SoftAssertions;
-import org.junit.Assert;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -41,6 +41,10 @@ public class PositiveRandomStringTest {
     public void setUp(){
         softAssertions = new SoftAssertions();
     }
+    @After
+    public void tearDown() {
+        softAssertions.assertAll();
+    }
 
 
     @Test
@@ -49,6 +53,7 @@ public class PositiveRandomStringTest {
         String actualResult = new RandomString().stringGenerator(type, length);
         char[] actualResultArr = actualResult.toCharArray();
         int actual = 0;
+        int actualALPANUMERIC = 0;
 
         for (int i = 0; i < length; i++) {
             int index = controlData.indexOf(actualResultArr[i]);
@@ -60,11 +65,14 @@ public class PositiveRandomStringTest {
         if (type == ALPANUMERIC) {
             System.out.println("additional ALPHANUMERIC ContentTest");
             if (!actualResult.matches(".*[a-z].*")||!actualResult.matches(".*[0-9].*")) {
-                actual = -1;
-                Assert.assertEquals("generated ALPHANUMERIC string doesn't contain declared content ", 0, actual);
+                actualALPANUMERIC = -1;
+                softAssertions.assertThat(actualALPANUMERIC).as("generated ALPHANUMERIC string doesn't contain declared content").isEqualTo(0);
+             //   Assert.assertEquals("generated ALPHANUMERIC string doesn't contain declared content ", 0, actual);
             }
         }
-        Assert.assertEquals("generated string contains an error character", 0, actual);
+        softAssertions.assertThat(actual).as("generated string contains an error character").isEqualTo(0);
+
+      //  Assert.assertEquals("generated string contains an error character", 0, actual);
         System.out.println("stringGeneratorContentTest with type " + type);
     }
 
