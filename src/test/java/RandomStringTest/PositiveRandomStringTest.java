@@ -23,6 +23,7 @@ public class PositiveRandomStringTest {
     private int length;
     private SoftAssertions softAssertions;
 
+
     public PositiveRandomStringTest(String controlData, RandomString.StringUtils type, int length) {
         this.controlData = controlData;
         this.type = type;
@@ -32,9 +33,9 @@ public class PositiveRandomStringTest {
     @Parameterized.Parameters
     public static Collection controlData() {
         return Arrays.asList(new Object[][]{
-                {"0123456789", NUMS, 165},
-                {"abcdefghijklmnopqrstuvwxyz", ALPHABET, 165},
-                {"abcdefghijklmnopqrstuvwxyz0123456789", ALPANUMERIC, 165}
+                {"0123456789", NUMS, 10},
+                {"abcdefghijklmnopqrstuvwxyz", ALPHABET, 20},
+                {"abcdefghijklmnopqrstuvwxyz0123456789", ALPANUMERIC, 30}
         });
     }
 
@@ -50,31 +51,17 @@ public class PositiveRandomStringTest {
 
 
     @Test
-    public void stringGeneratorContentTest() {
-
-        String actualResult = new RandomString().stringGenerator(type, length);
+    public void stringALPHANUMERICGeneratorContentTest() {
+        String actualResult = new RandomString().stringGenerator(ALPANUMERIC, length);
         char[] actualResultArr = actualResult.toCharArray();
         int actual = 0;
         int actualALPANUMERIC = 0;
 
-        for (int i = 0; i < length; i++) {
-            int index = controlData.indexOf(actualResultArr[i]);
-            if (index == -1) {
-                actual = index;
-            }
-        }
-
-        if (type == ALPANUMERIC) {
-            System.out.println("additional ALPHANUMERIC ContentTest");
+            System.out.println("additional ALPHANUMERIC ContentTest with length "+length);
             if (!actualResult.matches(".*[a-z].*") || !actualResult.matches(".*[0-9].*")) {
                 actualALPANUMERIC = -1;
-                softAssertions.assertThat(actualALPANUMERIC).as("generated ALPHANUMERIC string doesn't contain declared content").isEqualTo(0);
-
             }
-        }
-        softAssertions.assertThat(actual).as("generated string contains an error character").isEqualTo(0);
-
-        System.out.println("stringGeneratorContentTest with type " + type);
+        softAssertions.assertThat(actualALPANUMERIC).as("generated ALPHANUMERIC string doesn't contain declared content").isEqualTo(0);
     }
 
     @Test

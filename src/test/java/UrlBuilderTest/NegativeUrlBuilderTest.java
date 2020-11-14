@@ -5,32 +5,37 @@ import org.assertj.core.api.SoftAssertions;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 
+import java.util.Arrays;
+import java.util.Collection;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.core.StringContains.containsString;
+
+@RunWith(Parameterized.class)
 public class NegativeUrlBuilderTest {
-    private SoftAssertions softAssertions;
-    @Before
-    public void setUp(){
-        softAssertions = new SoftAssertions();
+    private String errorMessage;
+    private String urlValue;
+
+    public NegativeUrlBuilderTest(String errorMessage, String urlValue) {
+        this.errorMessage = errorMessage;
+        this.urlValue = urlValue;
     }
-    @After
-    public void tearDown() {
-        softAssertions.assertAll();
+
+    @Parameterized.Parameters
+    public static Collection ControlData() {
+        return Arrays.asList(new Object[][]{
+                {"please enter:\nprotocol;\n", new UrlBuilder.Builder().withDomain("google").withDomain("com").withPort("8080").build()},
+                {"please enter:\nprotocol;\ndomain;\n", new UrlBuilder.Builder().withPort("8080").build()},
+                {"please enter:\nport;\n", new UrlBuilder.Builder().withProtocol("ftp").withDomain("google").withDomain("com").build()}
+        });
     }
+
     @Test
-    public void urlWithoutElements(){
-        String errorMessage1 = "please enter:\nprotocol;\n";
-        String errorMessage2 = "please enter:\nprotocol;\ndomain;\n";
-        String errorMessage3 = "please enter:\nport;\n";
-
-        String actualMessage1 = new UrlBuilder.Builder().withDomain("google").withDomain("com").withPort("8080").build();
-        String actualMessage2 = new UrlBuilder.Builder().withPort("8080").build();
-        String actualMessage3 = new UrlBuilder.Builder().withProtocol("ftp").withDomain("google").withDomain("com").build();
-
-        softAssertions.assertThat(actualMessage1).as("url without protocol").isEqualTo(errorMessage1);
-        softAssertions.assertThat(actualMessage2).as("url without protocol and domain").isEqualTo(errorMessage2);
-        softAssertions.assertThat(actualMessage3).as("url without port").isEqualTo(errorMessage3);
-
+    public void urlWithoutElements() {
+        assertThat(errorMessage).as("url have unexpected data").isEqualTo(urlValue);
     }
-
 
 }
