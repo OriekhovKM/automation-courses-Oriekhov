@@ -4,9 +4,8 @@ package Infrastructure;
 
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-public class TestUrl {
+public class UrlBuilder {
     private String protocol;
     private String domain;
     private String port;
@@ -70,10 +69,6 @@ public class TestUrl {
            return this;
         }
         public String hashMapToString(HashMap<String, String> map) {
-//            HashMap<String, String> reverseParam = new HashMap<String, String>();
-//            List<String> reverseOrderedKeys = new ArrayList<String>(map.keySet());
-//            Collections.reverse(reverseOrderedKeys);
-//            reverseOrderedKeys.forEach((key)->reverseParam.put(key,map.get(key)));
 
             String mapAsString = map.keySet().stream()
                     .map(key -> key + "=" + map.get(key))
@@ -85,6 +80,22 @@ public class TestUrl {
         public String build() {
             if (this.domain.endsWith(".")){
                 this.domain = this.domain.substring(0, this.domain.length()-1);
+            }
+            String error = "please enter:\n";
+            if(this.protocol.equals("")){
+                error = error+"protocol;\n";
+
+            }
+            if(this.domain.equals("")){
+                error = error+"domain;\n";
+
+            }
+            if(this.port.equals("")){
+                error = error+"port;\n";
+
+            }
+            if (!error.equals("please enter:\n")){
+                return error;
             }
 
             return new StringBuilder()
@@ -98,13 +109,13 @@ public class TestUrl {
 
         public static void main(String[] args) {
             HashMap <String, String> param = new HashMap<String, String>();
-            param.put ("?q", "query");
+            param.put ("q", "query");
             param.put ("oq", "123456789");
             param.put ("sq", "params+this");
 
 
-            String url = new TestUrl.Builder()
-                    .withProtocol("https")
+            String url = new UrlBuilder.Builder()
+                    .withProtocol("http")
                     .withDomain("google")
                     .withDomain("com")
                     .withPort("8080")
@@ -118,6 +129,12 @@ public class TestUrl {
                     .build();
 
             System.out.println(url);
+            String url1 = new UrlBuilder.Builder()
+
+                    .withPort("8080")
+                    .build();
+
+            System.out.println(url1);
         }
     }
 }

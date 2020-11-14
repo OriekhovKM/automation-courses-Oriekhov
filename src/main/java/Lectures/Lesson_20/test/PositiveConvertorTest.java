@@ -17,11 +17,11 @@ public class PositiveConvertorTest extends BaseTest {
     private ConvertorApp app;
     private ConvertorApp.ConvertorTypes type;
     private float expected;
-    private int convertedData;
+    private int convertData;
 
-    public PositiveConvertorTest(ConvertorApp.ConvertorTypes type, int convertedData, float expected) {
+    public PositiveConvertorTest(ConvertorApp.ConvertorTypes type, int convertData, float expected) {
         this.type = type;
-        this.convertedData = convertedData;
+        this.convertData = convertData;
         this.expected = expected;
     }
 
@@ -38,7 +38,7 @@ public class PositiveConvertorTest extends BaseTest {
     @Test
     public void testPositiveConvertParametrized() {
         ConvertorApp app = new ConvertorApp();
-        float actual = app.convert(type, convertedData);
+        float actual = app.convert(type, convertData);
         Assert.assertEquals(expected, actual, 1);
         System.out.println("parametrized test with type" + type);
     }
