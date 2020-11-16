@@ -2,11 +2,11 @@ package Infrastructure.base;
 import Infrastructure.config.ConfigurationManager;
 import Infrastructure.TestServer;
 import Infrastructure.wdm.DefaultWebDriverManager;
-import Infrastructure.wdm.RunOn;
 import Infrastructure.wdm.WebDriverManager;
 import Infrastructure.logging.AbstractLogger;
 import Infrastructure.logging.FileTestLogger;
 import Infrastructure.logging.StdTestLogger;
+import org.openqa.selenium.WebDriver;
 
 public class TestBase {
 
@@ -16,20 +16,19 @@ public class TestBase {
 
     protected TestServer server;
     protected AbstractLogger logger;
-    private String browser;
+    private WebDriver driver;
 
     public void setup() {
       wdm = new DefaultWebDriverManager(); //WebDriverManager changed on DefaultWebDriverManager
-      browser = wdm.getBrowser();   //createBrowser changed on getBrowser
+      driver = wdm.getDriver();   //createBrowser changed on getBrowser
       logger = getLogger();
-      logger.log(browser);
+      logger.log(driver);
       server = new TestServer();
       String url = server.getUrl();
-      logger.log(url);
       beforeTest();
     }
     public void tearDown(){
-        wdm.destroyBrowser(browser);
+        wdm.destroyDriver(driver);
         afterTest();
     }
 

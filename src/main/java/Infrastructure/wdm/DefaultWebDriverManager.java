@@ -1,18 +1,15 @@
 package Infrastructure.wdm;
 
 import Infrastructure.config.ConfigurationManager;
-
+import org.openqa.selenium.WebDriver;
 
 
 public class DefaultWebDriverManager implements WebDriverManager {
 
 
-    public DefaultWebDriverManager() {
-
-    }
 
     @Override
-    public String getBrowser() {
+    public WebDriver getDriver() {
         RunOn runOn = (RunOn) ConfigurationManager.getInstance().getRunOn();
 
         switch (runOn) {
@@ -30,6 +27,9 @@ public class DefaultWebDriverManager implements WebDriverManager {
     }
 
     @Override
-    public void destroyBrowser(String browser) {
+    public void destroyDriver(WebDriver driver) {
+        if (driver != null){
+            driver.quit();
+        }
 }
 }

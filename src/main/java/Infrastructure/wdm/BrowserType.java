@@ -2,6 +2,9 @@ package Infrastructure.wdm;
 
 public enum BrowserType {
     CHROME,
-    FIREFOX
+    FIREFOX,
+    IE,
+    SAFARI,
+    OPERA
 
 }

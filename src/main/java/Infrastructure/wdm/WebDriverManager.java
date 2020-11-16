@@ -1,9 +1,9 @@
 package Infrastructure.wdm;
 
-import Infrastructure.config.ConfigurationManager;
+import org.openqa.selenium.WebDriver;
 
 public interface WebDriverManager {
-    public String getBrowser();
-    public void destroyBrowser(String browser);
+    public WebDriver getDriver();
+    public void destroyDriver(WebDriver driver);
 
 }

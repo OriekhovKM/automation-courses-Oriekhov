@@ -1,20 +1,19 @@
 package Infrastructure.logging;
 
 
+import org.openqa.selenium.WebDriver;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.concurrent.TimeUnit;
 
 public class FileTestLogger implements AbstractLogger {
 
     private Object FileWriter;
 
     @Override
-    public void log(String operation) {
+    public void log(WebDriver operation) {
         try {
             FileWriter fileWriter = new FileWriter(new File("log.txt"), true);
             fileWriter.write(operation + "\n");

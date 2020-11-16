@@ -1,7 +1,9 @@
 package Infrastructure.wdm;
 
+import org.openqa.selenium.WebDriver;
+
 public interface WebDriverFactory {
-    public  String create();
+    public WebDriver create();
 
 
 

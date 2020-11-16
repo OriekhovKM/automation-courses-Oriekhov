@@ -1,12 +1,14 @@
 package Infrastructure.logging;
 
+import org.openqa.selenium.WebDriver;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class StdTestLogger implements AbstractLogger {
 
     @Override
-    public void log(String operation) {
+    public void log(WebDriver operation) {
         System.out.println(getEntry(operation));
     }
 

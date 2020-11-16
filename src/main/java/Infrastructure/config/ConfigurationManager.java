@@ -2,7 +2,6 @@ package Infrastructure.config;
 
 
 import Infrastructure.wdm.BrowserType;
-import Infrastructure.wdm.DefaultWebDriverManager;
 import Infrastructure.wdm.RunOn;
 
 public class ConfigurationManager {
@@ -44,4 +43,6 @@ public class ConfigurationManager {
         return BrowserType.valueOf(getEnvironmentVariableOrDefault("browser", "CHROME"));
 
     }
+
+    public String getRemoteHubUrl() {return getEnvironmentVariableOrDefault("hubUrl", "http://hubUrl.test.site");}
 }
