@@ -19,14 +19,15 @@ public class RemoteWebDriverFactory implements WebDriverFactory{
             case CHROME:
               caps.merge(BrowserCapabilities.chromeCapabilities());
               break;
-//            case FIREFOX:
-//                return new FirefoxDriver();
-//            case IE:
-//                return new InternetExplorerDriver();
-//            case SAFARI:
-//                return new SafariDriver();
-//            case OPERA:
-//                return new OperaDriver();
+            case FIREFOX:
+                caps.merge(BrowserCapabilities.firefoxCapabilities());
+                break;
+            case IE:
+                caps.merge(BrowserCapabilities.internetExplorerCapabilities());
+                break;
+            case OPERA:
+                caps.merge(BrowserCapabilities.operaCapabilities());
+                break;
             default:
                 throw new IllegalArgumentException(String.format("unable to create driver with type %s", testBrowser));
         }

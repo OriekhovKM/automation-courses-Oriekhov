@@ -22,9 +22,9 @@ public class TestBase {
       wdm = new DefaultWebDriverManager(); //WebDriverManager changed on DefaultWebDriverManager
       driver = wdm.getDriver();   //createBrowser changed on getBrowser
       logger = getLogger();
-      logger.log(driver);
       server = new TestServer();
       String url = server.getUrl();
+      logger.log(url);
       beforeTest();
     }
     public void tearDown(){

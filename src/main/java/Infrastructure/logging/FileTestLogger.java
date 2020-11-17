@@ -1,8 +1,6 @@
 package Infrastructure.logging;
 
 
-import org.openqa.selenium.WebDriver;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,7 +11,7 @@ public class FileTestLogger implements AbstractLogger {
     private Object FileWriter;
 
     @Override
-    public void log(WebDriver operation) {
+    public void log(String operation) {
         try {
             FileWriter fileWriter = new FileWriter(new File("log.txt"), true);
             fileWriter.write(operation + "\n");
