@@ -1,19 +1,21 @@
 package HomeWorks.HomeWork19;
 
+import Infrastructure.utils.WaitUtils;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 
 @RunWith(Parameterized.class)
@@ -22,10 +24,8 @@ public class NegativeWordPressTest {
     private String password;
     private String errorMessage;
     WebDriver driver = new ChromeDriver();
-    Wait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver)
-            .withTimeout(20, TimeUnit.SECONDS)
-            .pollingEvery(500, TimeUnit.MILLISECONDS)
-            .ignoring(NoSuchElementException.class);
+    Wait<WebDriver> fluentWait = WaitUtils.getFluentWait(driver);
+
     JavascriptExecutor js = (JavascriptExecutor) driver;
 
     public NegativeWordPressTest(String userName, String password, String errorMessage) {
