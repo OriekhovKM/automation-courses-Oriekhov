@@ -9,9 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class WindowExample {
 
     @Test
-            public void windowsSwitchTest(){
+    public void windowsSwitchTest() {
         WebDriver driver = new ChromeDriver();
-        SeleniumUtils switchToGithub = new SeleniumUtils(driver, "GitHub", "");
+        SeleniumUtils seleniumUtils = new SeleniumUtils(driver);
         driver.get("http://google.com");
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -20,29 +20,28 @@ public class WindowExample {
         js.executeScript("window.open('http://testautomationcourses.is-best.net/wordpress/')");
         js.executeScript("window.open('https://lms.ithillel.ua/')");
 
-        switchToGithub.switchToWindowByTitle();
+        seleniumUtils.switchToWindowByTitle("GitHub");
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
         System.out.println("_______________________________");
 
 
-//        pages.returnToParentWindow(driver);
-//        System.out.println(driver.getTitle());
-//        System.out.println(driver.getCurrentUrl());
-//        System.out.println("_______________________________");
-//
-//        pages.switchToWindowContainsUrl(driver, "https://lms.ithillel.ua/");
-//        System.out.println(driver.getTitle());
-//        System.out.println(driver.getCurrentUrl());
-//        System.out.println("_______________________________");
-//
-//        pages.returnToParentWindow(driver);
-//        System.out.println(driver.getTitle());
-//        System.out.println(driver.getCurrentUrl());
-//        pages.closeExtraWindows(driver);
+        seleniumUtils.returnToParentWindow();
+        System.out.println(driver.getTitle());
+        System.out.println(driver.getCurrentUrl());
+        System.out.println("_______________________________");
 
-        //driver.quit();
+        seleniumUtils.switchToWindowContainsUrl("https://lms.ithillel.ua/");
+        System.out.println(driver.getTitle());
+        System.out.println(driver.getCurrentUrl());
+        System.out.println("_______________________________");
+
+        seleniumUtils.returnToParentWindow();
+        System.out.println(driver.getTitle());
+        System.out.println(driver.getCurrentUrl());
+        seleniumUtils.closeExtraWindows();
+
+        driver.quit();
     }
-
 
 }
