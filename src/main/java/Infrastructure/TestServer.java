@@ -9,7 +9,7 @@ public class TestServer {
         String url = "";
         switch (testEnvironment) {
             case "qa_env":
-                return "http://qa.env.mysite.com";
+                return "http://testautomationcourses.is-best.net/wordpress/";
             case "prod_env":
                 return "http://prod.env.mysite.com";
             case "staging_env":
