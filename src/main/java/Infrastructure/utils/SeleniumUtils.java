@@ -36,7 +36,7 @@ public class SeleniumUtils {
     public void closeExtraWindows() {
         for (String window : driver.getWindowHandles()) {
             driver.switchTo().window(window);
-            if (!driver.getWindowHandle().equals(parentWindow)) {
+            if (!window.equals(parentWindow)) {
                 driver.close();
             }
         }
