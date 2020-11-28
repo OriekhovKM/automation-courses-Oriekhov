@@ -41,4 +41,12 @@ public class SeleniumUtils {
             }
         }
     }
+
+    public void acceptPopUp() {
+        driver.switchTo().alert().accept();
+    }
+
+    public void dismissPopUp() {
+        driver.switchTo().alert().dismiss();
+    }
 }
