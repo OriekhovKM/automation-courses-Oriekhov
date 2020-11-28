@@ -4,18 +4,23 @@ import org.openqa.selenium.WebDriver;
 
 public class SeleniumUtils {
     private static String parentWindow;
-    public static void switchToWindowByTitle (WebDriver driver, String title){
-     parentWindow = driver.getWindowHandle();
-        for(String window: driver.getWindowHandles()){
+    private WebDriver driver;
+
+    public SeleniumUtils(WebDriver driver) {
+        this.driver = driver;
+        this.parentWindow = driver.getWindowHandle();
+    }
+
+    public void switchToWindowByTitle(String title) {
+        for (String window : driver.getWindowHandles()) {
             driver.switchTo().window(window);
-            if(driver.getTitle().contains(title)){
+            if (driver.getTitle().contains(title)) {
                 break;
             }
         }
     }
 
-    public static void switchToWindowContainsUrl (WebDriver driver, String url) {
-        parentWindow = driver.getWindowHandle();
+    public void switchToWindowContainsUrl(String url) {
         for (String window : driver.getWindowHandles()) {
             driver.switchTo().window(window);
             if (driver.getCurrentUrl().contains(url)) {
@@ -24,16 +29,24 @@ public class SeleniumUtils {
         }
     }
 
-    public static void returnToParentWindow(WebDriver driver) {
+    public void returnToParentWindow() {
         driver.switchTo().window(parentWindow);
     }
 
-    public static void closeExtraWindows(WebDriver driver){
+    public void closeExtraWindows() {
         for (String window : driver.getWindowHandles()) {
             driver.switchTo().window(window);
-            if (!driver.getCurrentUrl().equals(parentWindow)) {
+            if (!window.equals(parentWindow)) {
                 driver.close();
             }
         }
+    }
+
+    public void acceptPopUp() {
+        driver.switchTo().alert().accept();
+    }
+
+    public void dismissPopUp() {
+        driver.switchTo().alert().dismiss();
     }
 }

@@ -9,8 +9,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class WindowExample {
 
     @Test
-            public void windowsSwitchTest(){
+    public void windowsSwitchTest() {
         WebDriver driver = new ChromeDriver();
+        SeleniumUtils seleniumUtils = new SeleniumUtils(driver);
         driver.get("http://google.com");
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
@@ -19,29 +20,28 @@ public class WindowExample {
         js.executeScript("window.open('http://testautomationcourses.is-best.net/wordpress/')");
         js.executeScript("window.open('https://lms.ithillel.ua/')");
 
-        SeleniumUtils.switchToWindowByTitle(driver, "GitHub: Where the world builds software · GitHub");
+        seleniumUtils.switchToWindowByTitle("GitHub");
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
         System.out.println("_______________________________");
 
 
-        SeleniumUtils.returnToParentWindow(driver);
+        seleniumUtils.returnToParentWindow();
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
         System.out.println("_______________________________");
 
-        SeleniumUtils.switchToWindowContainsUrl(driver, "https://lms.ithillel.ua/");
+        seleniumUtils.switchToWindowContainsUrl("https://lms.ithillel.ua/");
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
         System.out.println("_______________________________");
 
-        SeleniumUtils.returnToParentWindow(driver);
+        seleniumUtils.returnToParentWindow();
         System.out.println(driver.getTitle());
         System.out.println(driver.getCurrentUrl());
-        SeleniumUtils.closeExtraWindows(driver);
+        seleniumUtils.closeExtraWindows();
 
-        //driver.quit();
+        driver.quit();
     }
-
 
 }
