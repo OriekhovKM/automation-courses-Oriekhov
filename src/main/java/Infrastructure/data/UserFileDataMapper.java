@@ -58,6 +58,18 @@ public class UserFileDataMapper implements UserDataMapper {
         throw new UserNotFoundException(String.format("User with name '%s' not found", name));
     }
 
+    @Override
+    public User findUserByID(String id) throws UserNotFoundException {
+
+        for (int i = 0; i < users.size(); i++) {
+            users.get(i);
+            if (users.get(i) != null && users.get(i).getId().equals(id)) {
+                return users.get(i);
+            }
+        }
+        throw new UserNotFoundException(String.format("User with name '%s' not found", id));
+    }
+
     public ArrayList getAll() {
         return (ArrayList) users;
     }

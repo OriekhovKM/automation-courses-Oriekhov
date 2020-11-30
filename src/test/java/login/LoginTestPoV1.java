@@ -1,7 +1,7 @@
 package login;
 
 import Infrastructure.base.TestBase;
-import Infrastructure.pages.MainPage;
+import Infrastructure.pages.pageobjectclassic.MainPage;
 import org.junit.Test;
 
 public class LoginTestPoV1 extends TestBase {

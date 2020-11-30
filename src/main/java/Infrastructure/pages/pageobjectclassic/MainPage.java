@@ -1,4 +1,4 @@
-package Infrastructure.pages;
+package Infrastructure.pages.pageobjectclassic;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,6 +6,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage {
+
+    private By loginTitle = By.xpath("//a[text()='Log in']");
     WebDriver driver;
 
     public MainPage(WebDriver driver) {
@@ -18,7 +20,7 @@ public class MainPage {
     }
 
     public LoginPage navigateToLoginPage() {
-        driver.findElement(By.xpath("//div/ul/li[1]/a[text()='Log in']")).click();
+        driver.findElement(loginTitle).click();
         new WebDriverWait(driver, 10).until(ExpectedConditions.urlContains("/wp-login.php"));
         return new LoginPage(driver);
     }

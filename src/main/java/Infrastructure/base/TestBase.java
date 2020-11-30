@@ -1,6 +1,8 @@
 package Infrastructure.base;
 import Infrastructure.config.ConfigurationManager;
 import Infrastructure.TestServer;
+import Infrastructure.data.UserDataMapper;
+import Infrastructure.data.UserFileDataMapper;
 import Infrastructure.wdm.DefaultWebDriverManager;
 import Infrastructure.wdm.WebDriverManager;
 import Infrastructure.logging.AbstractLogger;
@@ -18,6 +20,7 @@ public class TestBase {
     protected AbstractLogger logger;
     protected WebDriver driver;
     protected WebDriverWait wait;
+    protected UserDataMapper users;
 
     @Before
     public void setup() {
@@ -28,6 +31,7 @@ public class TestBase {
       server = new TestServer();
       logger.log(server.getUrl());
       beforeTest();
+      users = new UserFileDataMapper();
     }
 
     @After

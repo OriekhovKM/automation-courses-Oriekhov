@@ -1,4 +1,4 @@
-package Infrastructure.pages;
+package Infrastructure.pages.pageobjectclassic;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
