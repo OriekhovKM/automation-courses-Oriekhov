@@ -13,7 +13,7 @@ public class LoginTestPFV2 extends TestBase {
 
     @Test
     public void positiveTest() throws UserNotFoundException {
-        User admin = users.findUserByName("admin");
+        User admin = users.findUserByID("10");
         MainPageFactory mainPageFactory = new MainPageFactory(driver);
         mainPageFactory.openMainPage(server.getUrl());
 
@@ -22,10 +22,10 @@ public class LoginTestPFV2 extends TestBase {
 
         LoginPageFactory loginPageFactory = new LoginPageFactory(driver);
 
-        logger.log("guest user populate login name form with - ");
+        logger.log("guest user populate login name form with - " +admin.getUserName());
         loginPageFactory.populateLoginNameField(admin.getUserName());
 
-        logger.log("guest user populate login password form with - ");
+        logger.log("guest user populate login password form with - " +admin.getUserPassword());
         loginPageFactory.populateLoginPasswordField(admin.getUserPassword());
 
         logger.log("guest user submits login  form");
@@ -37,7 +37,8 @@ public class LoginTestPFV2 extends TestBase {
     }
 
     @Test
-    public void emptyLoginTest(){
+    public void emptyLoginTest() throws UserNotFoundException{
+        User admin = users.findUserByID("11");
         MainPageFactory mainPageFactory = new MainPageFactory(driver);
         mainPageFactory.openMainPage(server.getUrl());
 
@@ -46,11 +47,11 @@ public class LoginTestPFV2 extends TestBase {
 
         LoginPageFactory loginPageFactory = new LoginPageFactory(driver);
 
-        logger.log("guest user populate login name form with - ");
-        loginPageFactory.populateLoginNameField("");
+        logger.log("guest user populate login name form with - " +admin.getUserName());
+        loginPageFactory.populateLoginNameField(admin.getUserName());
 
-        logger.log("guest user populate login password form with - ");
-        loginPageFactory.populateLoginPasswordField("77777");
+        logger.log("guest user populate login password form with - " +admin.getUserPassword());
+        loginPageFactory.populateLoginPasswordField(admin.getUserPassword());
 
         logger.log("guest user submits login  form");
         loginPageFactory.submitLoginFormFail();
@@ -58,14 +59,20 @@ public class LoginTestPFV2 extends TestBase {
     }
 
     @Test
-    public void emptyPasswordTest(){
+    public void emptyPasswordTest() throws UserNotFoundException{
+        User admin = users.findUserByID("12");
         MainPageFactory mainPageFactory = new MainPageFactory(driver);
         mainPageFactory.openMainPage(server.getUrl());
+
+        logger.log("guest user navigate to login page");
         mainPageFactory.navigateToLoginPage();
 
         LoginPageFactory loginPageFactory = new LoginPageFactory(driver);
-        loginPageFactory.populateLoginNameField("admin");
-        loginPageFactory.populateLoginPasswordField("");
+        logger.log("guest user populate login name form with - " +admin.getUserName());
+        loginPageFactory.populateLoginNameField(admin.getUserName());
+
+        logger.log("guest user populate login password form with - " +admin.getUserPassword());
+        loginPageFactory.populateLoginPasswordField(admin.getUserPassword());
         loginPageFactory.submitLoginFormFail();
         Assertions.assertThat(loginPageFactory.getErrorMsg()).isEqualTo("Error: The password field is empty.");
     }

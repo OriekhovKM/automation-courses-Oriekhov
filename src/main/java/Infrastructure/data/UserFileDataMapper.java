@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserFileDataMapper implements UserDataMapper {
+public class  UserFileDataMapper implements UserDataMapper {
     List<User> users = new ArrayList();
     private final static String USER_FILE_PATCH = "users.txt";
 
@@ -14,12 +14,19 @@ public class UserFileDataMapper implements UserDataMapper {
     }
   
     public UserFileDataMapper(String path) {
+
         try (BufferedReader reader = new BufferedReader(new FileReader(new File(path)))) {
             String rb = null;
 
             int i = 0;
             while ((rb = reader.readLine()) != null) {
-                String[] splitedUser = rb.split(";");
+                String[] originalUser = rb.split(";");
+                String[] splitedUser = {"", "", "", "", ""};
+                for (int n=0; n< originalUser.length; n++) {
+                    if (originalUser[n] != null) {
+                        splitedUser[n] = originalUser[n];
+                    }
+                }
                 users.add(i, new User(splitedUser[0], splitedUser[1], splitedUser[2], splitedUser[3]));
                 i++;
 

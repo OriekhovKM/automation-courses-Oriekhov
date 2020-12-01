@@ -1,13 +1,12 @@
 package Infrastructure.base;
-import Infrastructure.config.ConfigurationManager;
 import Infrastructure.TestServer;
-import Infrastructure.data.UserDataMapper;
+import Infrastructure.config.ConfigurationManager;
 import Infrastructure.data.UserFileDataMapper;
-import Infrastructure.wdm.DefaultWebDriverManager;
-import Infrastructure.wdm.WebDriverManager;
 import Infrastructure.logging.AbstractLogger;
 import Infrastructure.logging.FileTestLogger;
 import Infrastructure.logging.StdTestLogger;
+import Infrastructure.wdm.DefaultWebDriverManager;
+import Infrastructure.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +19,7 @@ public class TestBase {
     protected AbstractLogger logger;
     protected WebDriver driver;
     protected WebDriverWait wait;
-    protected UserDataMapper users;
+    protected UserFileDataMapper users;
 
     @Before
     public void setup() {
