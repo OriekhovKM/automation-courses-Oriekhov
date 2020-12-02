@@ -27,7 +27,7 @@ public class  UserFileDataMapper implements UserDataMapper {
                         splitedUser[n] = originalUser[n];
                     }
                 }
-                users.add(i, new User(splitedUser[0], splitedUser[1], splitedUser[2], splitedUser[3]));
+                users.add(i, new User(splitedUser[0], splitedUser[1], splitedUser[2], splitedUser[3], splitedUser[4]));
                 i++;
 
             }

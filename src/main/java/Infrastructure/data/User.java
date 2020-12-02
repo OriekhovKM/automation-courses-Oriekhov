@@ -7,17 +7,19 @@ public class User {
     public String userName;
     public String userEmail;
     public String userPassword;
+    public String expectedCondition;
 
-    public User(String id, String userName, String userEmail, String userPassword) {
+    public User(String id, String userName, String userEmail, String userPassword, String expectedCondition) {
         this.id = id;
         this.userName = userName;
         this.userEmail = userEmail;
         this.userPassword = userPassword;
+        this.expectedCondition = expectedCondition;
     }
 
     @Override
     public String toString() {
-        return  userEmail + ";" + userPassword + "##";
+        return userEmail + ";" + userPassword + "##";
     }
 
     public String getId() {
@@ -34,6 +36,18 @@ public class User {
 
     public String getUserPassword() {
         return userPassword;
+    }
+
+    public String getExpectedCondition() {
+        if (expectedCondition.contains("\\n")) {
+            String expectedConditionsWithSeveralLines = "";
+            String[] splitedExpectedCondition = expectedCondition.split("\\\\n");
+            for (int i = 0; i < splitedExpectedCondition.length; i++) {
+                expectedConditionsWithSeveralLines = expectedConditionsWithSeveralLines + "\n" + splitedExpectedCondition[i];
+            }
+            return expectedConditionsWithSeveralLines.substring(1);
+        }
+        return expectedCondition;
     }
 
     @Override
