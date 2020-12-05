@@ -40,7 +40,7 @@ public class  UserFileDataMapper implements UserDataMapper {
     }
 
     @Override
-    public User findUserByEmail(String email) throws UserNotFoundException {
+    public User findUserByEmail(String email)  {
 
         for (int i = 0; i < users.size(); i++) {
             users.get(i);
@@ -54,7 +54,7 @@ public class  UserFileDataMapper implements UserDataMapper {
 
 
     @Override
-    public User findUserByName(String name) throws UserNotFoundException {
+    public User findUserByName(String name)  {
 
         for (int i = 0; i < users.size(); i++) {
             users.get(i);
@@ -66,7 +66,7 @@ public class  UserFileDataMapper implements UserDataMapper {
     }
 
     @Override
-    public User findUserByID(String id) throws UserNotFoundException {
+    public User findUserByID(String id)  {
 
         for (int i = 0; i < users.size(); i++) {
             users.get(i);

@@ -10,25 +10,25 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class LoginPageFactory {
-    @FindBy(xpath = "//*[@id=\"user_login\"]")
+    @FindBy(xpath = "//*[@id='user_login']")
     private WebElement loginField;
 
-    @FindBy(xpath = "//*[@id=\"user_pass\"]")
+    @FindBy(xpath = "//*[@id='user_pass']")
     private WebElement passwordField;
 
-    @FindBy(xpath = "//*[@id=\"wp-submit\"]")
+    @FindBy(xpath = "//*[@id='wp-submit']")
     private WebElement submitButton;
 
-    @FindBy(xpath = "//*[@id=\"login_error\"]")
+    @FindBy(xpath = "//*[@id='login_error']")
     private WebElement errorMsgTitle;
 
     WebDriver driver;
 
-
-    public LoginPageFactory(WebDriver driver){
+    public LoginPageFactory(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
 
     public LoginPageFactory populateLoginNameField(String name) {
         loginField.sendKeys(name);
@@ -46,7 +46,7 @@ public class LoginPageFactory {
     }
 
 public LoginPageFactory submitLoginFormFail(){
-
+    new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(submitButton));
         submitButton.click();
         return this;
 }
