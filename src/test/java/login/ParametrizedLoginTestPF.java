@@ -2,7 +2,6 @@ package login;
 
 import Infrastructure.base.TestBase;
 import Infrastructure.data.User;
-import Infrastructure.data.UserNotFoundException;
 import Infrastructure.pages.pagefactory.LoginPageFactory;
 import Infrastructure.pages.pagefactory.MainPageFactory;
 import org.assertj.core.api.Assertions;
@@ -22,7 +21,7 @@ public class ParametrizedLoginTestPF extends TestBase {
     }
 
     @Parameterized.Parameters
-    public static Collection ControlDataForNegativeTests() {
+    public static Collection ControlDataForNegativeTests()  {
         return Arrays.asList(new Object[][]{
                 {"emptyLoginAndPassword"},
                 {"emptyLogin"},
@@ -33,7 +32,7 @@ public class ParametrizedLoginTestPF extends TestBase {
     }
 
     @Test
-    public void negativeLoginTests() throws UserNotFoundException {
+    public void negativeLoginTests()  {
         MainPageFactory mainPageFactory = new MainPageFactory(driver);
         mainPageFactory.openMainPage(server.getUrl());
         logger.log("guest user navigate to login page");
