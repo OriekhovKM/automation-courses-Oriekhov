@@ -1,9 +1,15 @@
-1;user1;user1@gmail.com;111111q
-2;user2;user2@gmail.com;22222e
-3;user3;user3@gmail.com;3333t
-4;user4;user4@gmail.com;44ty
-5;user5;user5@gmail.com;5555
-6;user6;user6@gmail.com;6666fh
-7;user7;user7@gmail.com;7777g
+positivePostTest;user1;user1@gmail.com;first comment;first comment\nYour comment is awaiting moderation.
+emptyNameAndEmail;;;22222e;Error: Please fill the required fields (name, email).
+emptyName;;user3@gmail.com;3333t;Error: Please fill the required fields (name, email).
+emptyEmail;user4;;44ty;Error: Please fill the required fields (name, email).
+allFieldsEmpty;;;;Error: Please fill the required fields (name, email).
+notValidEmail;user6;user666@;6666fh;Error: Please enter a valid email address.
+emptyComment;user7;user7@gmail.com;;Error: Please type your comment text.
 8;user8;user8@gmail.com;8888ty
 9;user9;user9@gmail.com;9999999gh
+10;admin;user10@gmail.com;admin;Howdy, admin
+emptyLogin;;user11@gmail.com;7777;Error: The username field is empty.
+emptyPassword;555555;user12@gmail.com;;Error: The password field is empty.
+emptyLoginAndPassword;;user12@gmail.com;;Error: The username field is empty.\nError: The password field is empty.
+incorrectPassword;admin;user10@gmail.com;admin11;Error: The password you entered for the username admin is incorrect. Lost your password?
+incorrectUserName;admin1;user10@gmail.com;admin;Unknown username. Check again or try your email address.
